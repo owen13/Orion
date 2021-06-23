@@ -1,0 +1,55 @@
+table {
+    thead {
+        tr {
+            th {
+                text-align: center;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                text-align: center;
+                
+                input {
+                    text-align: center;
+                    width: 60px;
+                }
+
+                select {
+                    
+                }
+
+                &.graphicsCardColumn {
+                    min-width: 150px;
+                    input {
+                        margin-right: 2px;
+                    }
+                }
+
+                &.hardDriveColumn {
+                    min-width: 100px;
+                    input {
+                        margin-right: 2px;
+                    }
+                }
+
+                &.weightColumn {
+                    min-width: 135px;
+                    input {
+                        margin-right: 2px;
+                    }
+                }
+                &.usbColumn {
+                    min-width: 200px;
+                }
+                &.actionsColumn {
+                    min-width: 205px;
+                    button.editButton {
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+    }
+}

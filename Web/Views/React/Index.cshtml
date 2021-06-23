@@ -1,0 +1,49 @@
+@using System.Collections.Generic
+@using Newtonsoft.Json
+@using JsonSerializer = System.Text.Json.JsonSerializer
+
+@model Models.ComputerListWithPartsViewModel
+
+@* https://medium.com/@PrudhviD/setup-reactjs-without-npm-and-webpack-77546436f0ed *@
+@{
+    ViewBag.Title = "React Single Page Testing";
+    Layout = "_Layout";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/React.css"/>
+}
+
+@section Scripts{
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.0.0-beta.3/babel.js"></script>
+
+    @* <script type="application/javascript" src="https://unpkg.com/browse/react-table@6.8.6/react-table.js"></script> *@
+    @* <script src="https://cdnjs.cloudflare.com/ajax/libs/react-table/6.11.5/react-table.js" integrity="sha512-FV6KkAWY2H8vxLbINn7igBJqx703G+t02JerQqHWM+DNvvAsFocOfeA/PEGCUxFbvPnpaXuGpf0qgav7ICpSCA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> *@
+
+    <script type="application/javascript">
+        let viewModel = {
+            Computers: @Html.Raw(JsonSerializer.Serialize(Model.Computers)),
+            Lists: {
+                Rams: @Html.Raw(JsonSerializer.Serialize(Model.PartLists.Rams)),
+                GraphicsCards: @Html.Raw(JsonSerializer.Serialize(Model.PartLists.GraphicsCards)),
+                HardDrives: @Html.Raw(JsonSerializer.Serialize(Model.PartLists.HardDrives)),
+                UsbTypes: @Html.Raw(JsonSerializer.Serialize(Model.PartLists.UsbTypes)),
+                UsbsOfEachType: @Html.Raw(JsonSerializer.Serialize(Model.PartLists.UsbsOfEachType)),
+                WeightUnits: @Html.Raw(JsonSerializer.Serialize(Model.PartLists.WeightUnits)),
+                Processors: @Html.Raw(JsonSerializer.Serialize(Model.PartLists.Processors)),
+            }
+        }
+        
+    </script>
+
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="js/React/Modules/Controls.js"></script>
+
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="js/React/Modules/Computer.js"></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="js/React/Modules/ComputerList.js"></script>
+
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="js/React/ReactSinglePage.js"></script>
+}
+
+<div id="root"></div>

@@ -1,0 +1,40 @@
+<h1>Computers</h1>
+
+<div>
+  <a [routerLink]="['/computer-add-edit']">
+    <button type="button" class="editButton btn btn-primary">ADD</button>
+  </a>
+</div>
+<table *ngIf="computers != null">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>RAM</th>
+      <th>Graphics</th>
+      <th>Hard Drive</th>
+      <th>USB Ports</th>
+      <th>PSU</th>
+      <th>Weight</th>
+      <th>Processors</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let computer of computers">
+      <td>{{computer.id}}</td>
+      <td>{{computer.ramDescription}}</td>
+      <td>{{computer.graphicsCardDescription}}</td>
+      <td>{{computer.hardDriveDescription}}</td>
+      <td>USB-2: {{computer.usbCounts.usb2}}, USB-3: {{computer.usbCounts.usb3}}, USB-C: {{computer.usbCounts.usbC}}</td>
+      <td>{{computer.psu}}</td>
+      <td>{{computer.weightQuantity}} {{computer.weightUnitDescription}}</td>
+      <td>{{computer.processorDescription}}</td>
+      <td class="actionsColumn">
+        <a [routerLink]="['/computer-add-edit', computer.id]">
+          <button type="button" class="editButton btn btn-primary">EDIT</button>
+        </a>
+          <button type="button" class="deleteButton btn btn-primary" (click)="deleteComputer(computer.id)">DELETE</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

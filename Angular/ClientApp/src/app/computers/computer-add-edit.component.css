@@ -1,0 +1,9 @@
+.computerAddEdit .usbs label {
+  margin-right: 5px;
+}
+.computerAddEdit .usbs select {
+  width: 60px;
+  display: inline;
+}
+
+/*# sourceMappingURL=computer-add-edit.component.css.map */

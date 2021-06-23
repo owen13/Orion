@@ -1,0 +1,88 @@
+<h1>Computer Add/Edit</h1>
+
+<div *ngIf="computer != null" class="computerAddEdit">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">ID</label>
+    <label class="col-sm-10 col-form-label">{{computer.id}}</label>
+  </div>
+
+  <div class="form-group row">
+    <label for="ramSelect" class="col-sm-2 col-form-label">RAM</label>
+    <div class="col-sm-10">
+      <select id="ramSelect" [(ngModel)]="computer.ramId" class="form-control">
+        <option [ngValue]="item.Key" *ngFor="let item of partLists.rams">{{item.Value}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="graphicsSelect" class="col-sm-2 col-form-label">Graphics</label>
+    <div class="col-sm-10">
+      <select id="graphicsSelect" [(ngModel)]="computer.graphicsCardId" class="form-control">
+        <option [ngValue]="item.Key" *ngFor="let item of partLists.graphicsCards">{{item.Value}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="graphicsSelect" class="col-sm-2 col-form-label">Hard Drives</label>
+    <div class="col-sm-10">
+      <select id="hardDrives" [(ngModel)]="computer.hardDriveId" class="form-control">
+        <option [ngValue]="item.Key" *ngFor="let item of partLists.hardDrives">{{item.Value}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="usb2" class="col-sm-2 col-form-label">USB Ports</label>
+    <div class="col-sm-10">
+      <div class="usbs">
+        <label for="usb2">USB-2</label>
+        <select id="usb2" [(ngModel)]="computer.usbCounts.usb2" class="form-control">
+          <option [ngValue]="item.Key" *ngFor="let item of partLists.usbsOfEachType">{{item.Value}}</option>
+        </select>
+
+        <label for="usb3">USB-3</label>
+        <select id="usb3" [(ngModel)]="computer.usbCounts.usb3" class="form-control">
+          <option [ngValue]="item.Key" *ngFor="let item of partLists.usbsOfEachType">{{item.Value}}</option>
+        </select>
+
+        <label for="usbC">USB-C</label>
+        <select id="usbC" [(ngModel)]="computer.usbCounts.usbC" class="form-control">
+          <option [ngValue]="item.Key" *ngFor="let item of partLists.usbsOfEachType">{{item.Value}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="psuInput" class="col-sm-2 col-form-label">PSU</label>
+    <div class="col-sm-10">
+      <input id="psuInput" type="number" [(ngModel)]="computer.psu" />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="weightInput" class="col-sm-2 col-form-label">Weight</label>
+    <input id="weightInput" type="number" [(ngModel)]="computer.weightQuantity" class="form-control col-sm-2">
+    <select id="weightUnitSelect" [(ngModel)]="computer.weightUnitId" class="form-control col-sm-8">
+      <option [ngValue]="item.Key" *ngFor="let item of partLists.weightUnits">{{item.Value}}</option>
+    </select>
+  </div>
+
+  <div class="form-group row">
+    <label for="processorSelect" class="col-sm-2 col-form-label">Processor</label>
+    <div class="col-sm-10">
+      <select id="processorSelect" [(ngModel)]="computer.processorId" class="form-control">
+        <option [ngValue]="item.Key" *ngFor="let item of partLists.processors">{{item.Value}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button *ngIf="!isAddMode()" type="button" class="btn btn-primary" (click)="updateComputer(computer)">UPDATE</button>
+      <button *ngIf="isAddMode()" type="button" class="btn btn-primary" (click)="addComputer(computer)">ADD</button>
+    </div>
+  </div>
+</div>

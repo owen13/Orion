@@ -1,0 +1,224 @@
+@using System.Text.Json
+@model Models.HomeViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@section Styles{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" />
+}
+
+@section Scripts{
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-debug.js" integrity="sha512-vLqsIgkyV4cFJclfXok0UZbW4F0tFLjLp6+aman4FvEYySAxTchsmSLklfQb/qWKb87zfBFZ0cS/P/FPPGZLSg==" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.6/sammy.js" integrity="sha512-GdTSyWMm/UwCFc5dg7NTCPYJN+w/fG56HHd9wNBfOvPpP3t4GlJN1tJlv5oc9F8NZpdX6InGGiPUUSMbbvmVwA==" crossorigin="anonymous"></script>
+    
+    <script type="application/javascript" src="js/ko4.js"></script>
+    
+        <script type="application/javascript">
+            var question = "Which factors affect your technology choices?";
+            var pointsBudget = 10;
+            var answers = [
+                "Functionality, compatibility, pricing - all that boring stuff",
+                "How often it is mentioned on Hacker News",
+                "Number of gradients/dropshadows on project homepage",
+                "Totally believable testimonials on project homepage"];
+            
+            var viewModel = {
+                Computers: @Html.Raw(JsonSerializer.Serialize(Model.Computers)),
+            }
+                        
+            ko.applyBindings(new AppViewModel(question, pointsBudget, answers, viewModel));
+        </script>
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div id="tutorial1">
+    <h1>Introduction</h1>
+    
+    <p>First name: <strong data-bind="text: firstName"></strong></p>
+    <p>Last name: <strong data-bind="text: lastName"></strong></p>
+    <p>Full name: <strong data-bind="text: fullName"></strong></p>
+
+    <p>First name: <input data-bind="value: firstName"/></p>
+    <p>Last name: <input data-bind="value: lastName"/></p>
+
+    <button data-bind="click: capitalizeLastName">Go caps</button>
+</div>
+
+<div id="tutorial2">
+    <h1>Tutorial 2: Working with Lists & Collection</h1>
+    
+    <h2>Your seat reservations (<span data-bind="text: seats().length"></span></h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Passenger name</th>
+            <th>Meal</th>
+            <th>Surcharge</th>
+            <th></th>
+        </tr>
+        <thead></thead>
+        <tbody data-bind="foreach: seats">
+        <tr>
+            <td><input data-bind="value:name"/></td>
+            <td><select data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select></td>
+            <td data-bind="text: formattedPrice"></td>
+            <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button data-bind="click: addSeat, enable: seats().length < 5">Reserve Another Seat</button>
+
+    <h3 data-bind="visible: totalSurcharge() > 0">
+        Total Surcharge: $<span data-bind="text: totalSurcharge().toFixed(2)"></span>
+    </h3>
+</div>
+
+<div id="tutorial3">
+    <h1>Tutorial 3: Single Page Applications</h1>
+    
+    <div>
+        <ul class="folders" data-bind="foreach: folders">
+            <li data-bind="text: $data,
+            css: {selected: $data == $root.chosenFolderId()},
+            click: $root.goToFolder">
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <!-- Mails grid -->
+        <table class="mails" data-bind="with: chosenFolderData">
+            <thead><tr><th>From</th><th>To</th><th>Subject</th><th>Date</th></tr></thead>
+            <tbody data-bind="foreach: mails">
+            <tr data-bind="click: $root.goToMail">
+                <td data-bind="text: from"></td>
+                <td data-bind="text: to"></td>
+                <td data-bind="text: subject"></td>
+                <td data-bind="text: date"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Chosen mail -->
+    <div class="viewMail" data-bind="with: chosenMailData">
+        <div class="mailInfo">
+            <h1 data-bind="text: subject"></h1>
+            <p><label>From</label>: <span data-bind="text: from"></span></p>
+            <p><label>To</label>: <span data-bind="text: to"></span></p>
+            <p><label>Date</label>: <span data-bind="text: date"></span></p>
+        </div>
+        <p class="message" data-bind="html: messageContent" />
+    </div>
+    
+</div>
+
+<div id="tutorial4">
+    <h1>Tutorial 4: Creating custom bindings</h1>
+        
+    <h3 data-bind="text: question"></h3>
+    <p>Please distribute <b data-bind="text: pointsBudget"></b> points between the following options.</p>
+
+    <table>
+        <thead><tr><th>Option</th><th>Importance</th></tr></thead>
+        <tbody data-bind="foreach: answers">
+        <tr>
+            <td data-bind="text: answerText"></td>
+            <td data-bind="starRating: points"></td>
+            <td><select data-bind="options: [1,2,3,4,5], value: points"></select></td>
+        </tr>    
+        </tbody>
+    </table>
+    
+    @* <h3 data-bind="visible: pointsUsed() > pointsBudget">You've used too many points! Please remove some.</h3> *@
+    <h3 data-bind="fadeVisible: pointsUsed() > pointsBudget">You've used too many points! Please remove some.</h3>
+    <p>You've got <b data-bind="text: pointsBudget - pointsUsed()"></b> points left to use.</p>
+    
+    @* <button data-bind="enable: pointsUsed() <= pointsBudget, click: save">Finished</button> *@
+    @* <button data-bind="jqButton: true, enable: pointsUsed() <= pointsBudget, click: save">Finished</button> *@
+    <button data-bind="jqButton: { enable: pointsUsed() <= pointsBudget }, click: save">Finished</button>
+</div>
+
+<div id="tutorial5">
+    <h3>Tasks</h3>
+
+    <form data-bind="submit: addTask">
+        Add task: <input data-bind="value: newTaskText" placeholder="What needs to be done?" />
+        <button type="submit">Add</button>
+    </form>
+
+    <ul data-bind="foreach: tasks, visible: tasks().length > 0">
+        <li>
+            <input type="checkbox" data-bind="checked: isDone" />
+            <input data-bind="value: title, disable: isDone" />
+            <a href="#" data-bind="click: $parent.removeTask">Delete</a>
+        </li>
+    </ul>
+
+    You have <b data-bind="text: incompleteTasks().length">&nbsp;</b> incomplete task(s)
+    <span data-bind="visible: incompleteTasks().length == 0"> - it's beer time!</span>
+
+    <form action="/tasks/saveform" method="post">
+        <textarea name="tasks" data-bind="value: ko.toJSON(tasks)"></textarea>
+        <input type="hidden" name="tasks" data-bind="value: ko.toJSON(tasks)" />
+        <button type="submit">Save Submit</button>
+    </form>
+
+    <button data-bind="click: save">Save</button>
+</div>
+
+<div id="Computers">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>RAM</th>
+            <th>Hard Drive</th>
+            <th>USBs</th>
+            <th>Graphics</th>
+            <th>Weight</th>
+            <th>PSU</th>
+            <th>Processor</th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: computers">
+        <tr>
+            <td>
+                <span data-bind="text: Id"></span>
+            </td>
+            <td>
+                <span data-bind="text: RamId"></span>
+            </td>
+            <td>
+                <span data-bind="text: HardDriveId"></span>
+            </td>
+            <td>
+                USBS
+            </td>
+            <td>
+                <span data-bind="text: GraphicsCardId"></span>
+            </td>
+            <td>
+                <span data-bind="text: WeightQuantity"></span> <span data-bind="text: WeightUnitId"></span>
+            </td>
+            <td>
+                <span data-bind="text: Psu"></span> W PSU
+            </td>            
+            <td>
+                 <span data-bind="text: ProcessorId"></span>
+             </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

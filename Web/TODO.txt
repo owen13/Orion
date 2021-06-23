@@ -1,0 +1,17 @@
+VUE
+
+REACT (new project)
+
+Pass whole computer to onChange?
+
+https://blog.logrocket.com/modern-guide-react-state-patterns/
+
+https://reactjs.org/docs/hooks-state.html
+https://www.pluralsight.com/guides/dynamic-tables-from-editable-columns-in-react-html
+https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
+https://devexpress.github.io/devextreme-reactive/react/grid/docs/guides/editing/
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+
+THREE DOTS
+https://stackoverflow.com/questions/31048953/what-do-these-three-dots-in-react-do

@@ -1,0 +1,148 @@
+@page "/Computers"
+
+@using Blazor.Components
+@using Mapster
+@using Models
+@using Services
+
+@inject ComputerServiceAsync _computerServiceAsync
+@inject ComputerPartsViewModelService _computerPartsViewModelService
+
+@inject IJSRuntime JsRuntime
+
+<h3>Computers</h3>
+
+@if (_computers == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>RAM</th>
+            <th>Graphics</th>
+            <th>Hard Drive</th>
+            <th>USB Ports</th>
+            <th>PSU</th>
+            <th>Weight</th>
+            <th>Processors</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (ComputerWithDescriptionsDto computer in _computers)
+            {
+                @if (_editedComputerId != computer.Id)
+                {
+                    <tr>
+                        <td>@computer.Id</td>
+                        <td>@computer.RamDescription</td>
+                        <td>@computer.GraphicsCardDescription</td>
+                        <td>@computer.HardDriveDescription</td>
+                        <td>USB-2: @computer.UsbCounts.Usb2, USB-3: @computer.UsbCounts.Usb3, USB-C: @computer.UsbCounts.UsbC</td>
+                        <td>@computer.Psu</td>
+                        <td>@computer.WeightQuantity @computer.WeightUnitDescription</td>
+                        <td>@computer.ProcessorDescription</td>
+                        <td class="actionsColumn">
+                            <button type="button" class="editButton btn btn-primary" @onclick="() => Edit(computer)">EDIT</button>
+                            <button type="button" class="deleteButton btn btn-primary" @onclick="() => Delete(computer)">DELETE</button>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>@computer.Id</td>
+                        <td>
+                            <SelectComponent Value="@computer.RamId" Items="@_parts.Rams" OnChange="(x) => computer.RamId = x" />
+                        </td>
+                        <td>
+                            <SelectComponent Value="@computer.GraphicsCardId" Items="@_parts.GraphicsCards" OnChange="(x) => computer.GraphicsCardId = x" />
+                        </td>
+                        <td>
+                            <SelectComponent Value="@computer.HardDriveId" Items="@_parts.HardDrives" OnChange="(x) => computer.HardDriveId = x" />
+                        </td>
+                        <td>
+                            USB-2 <SelectComponent Value="computer.UsbCounts.Usb2" Items="@_parts.UsbsOfEachType" OnChange="(x) => computer.UsbCounts.Usb2 = (short)x"></SelectComponent>
+                            USB-3 <SelectComponent Value="computer.UsbCounts.Usb3" Items="@_parts.UsbsOfEachType" OnChange="(x) => computer.UsbCounts.Usb3 = (short)x"></SelectComponent>
+                            USB-C <SelectComponent Value="computer.UsbCounts.UsbC" Items="@_parts.UsbsOfEachType" OnChange="(x) => computer.UsbCounts.UsbC = (short)x"></SelectComponent>
+                        </td>
+                        <td>
+                            <input @bind="@computer.Psu" />
+                        </td>
+                        <td>
+                            <input @bind="@computer.WeightQuantity" />
+                            <SelectComponent Value="@computer.WeightUnitId" Items="@_parts.WeightUnits" OnChange="(x) => computer.WeightUnitId = x" />
+                        </td>
+                        <td>
+                            <SelectComponent Value="@computer.ProcessorId" Items="@_parts.Processors" OnChange="(x) => computer.ProcessorId = x" />
+                        </td>
+                        <td class="actionsColumn">
+                            <button type="button" class="cancelButton btn btn-primary" @onclick="() => Cancel(computer)">Cancel</button>
+                            <button type="button" class="saveButton btn btn-primary" @onclick="() => Save(computer)">Save</button>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<ComputerWithDescriptionsDto> _computers;
+    private int? _editedComputerId = 0;
+    private ComputerWithDescriptionsDto _computerBeingEdited = null;
+    private ComputerPartsModel _parts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _computers = await _computerServiceAsync.GetAllComputersWithDescriptionsAsync();
+        _parts = await _computerPartsViewModelService.GetComputerPartsViewModel();
+    }
+
+    private void Edit(ComputerWithDescriptionsDto computer)
+    {
+        if (_computerBeingEdited != null)
+            Cancel(computer);
+        
+        _editedComputerId = computer.Id;
+        _computerBeingEdited = computer.Adapt<ComputerWithDescriptionsDto>(); // back up current state
+    }
+    
+    private void Cancel(ComputerWithDescriptionsDto computer)
+    {
+        int index = _computers.FindIndex(x => x.Id == computer.Id);
+        _computers[index] = _computerBeingEdited.Adapt<ComputerWithDescriptionsDto>();
+
+        _editedComputerId = null;
+        _computerBeingEdited = null;
+    }
+    
+    private async Task Delete(ComputerWithDescriptionsDto computer)
+    {
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");
+        if (confirmed)
+        {
+            _computerServiceAsync.DeleteComputer(computer.Id);
+            _computers.Remove(computer);
+            _editedComputerId = null;   
+        }
+    }
+
+    private void Save(ComputerWithDescriptionsDto computer)
+    {
+        ComputerWithDescriptionsDto result = _computerServiceAsync.UpdateComputer(computer);
+
+        int index = _computers.FindIndex(x => x.Id == computer.Id);
+
+        _computers[index] = result;
+
+        _editedComputerId = null;
+        _computerBeingEdited = null;
+    }
+}

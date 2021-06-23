@@ -1,0 +1,16 @@
+table {
+  thead {
+
+  }
+  tbody {
+    tr {
+      td {
+        button {
+          &.editButton {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+Validation
+Style
+
+ALTERNATE WAY TO GET APP SETTINGS 
+https://stackoverflow.com/questions/60521929/change-variables-in-appsettings-when-deploying-with-github-actions
+https://github.com/microsoft/variable-substitution
+https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/transforms-variable-substitution?view=azure-devops&tabs=yaml
+
+https://stackoverflow.com/questions/63708108/how-to-read-appsettings-json-file-configuration-in-angular-10
+
+CRUD
+https://developer.okta.com/blog/2018/04/26/build-crud-app-aspnetcore-angular
+
+https://www.toptal.com/angular/angular-5-asp-net-core
+https://www.red-gate.com/simple-talk/development/dotnet-development/building-an-angularjs-application-with-asp-net-core/
+https://www.ezzylearning.net/tutorial/a-guide-for-building-angular-spa-with-asp-net-core-5-web-api
