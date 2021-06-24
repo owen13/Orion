@@ -27,8 +27,7 @@ export class ComputerListComponent {
     if(confirm("Are you sure to delete Computer:" + computerId)) {
       this.computerService.deleteComputer(computerId).subscribe(
         () => {
-          const deletedComputerIndex = this.computers.map(e => e.id).indexOf(computerId); // TODO: Maybe pass index in?
-          this.computers.splice(deletedComputerIndex, 1);
+          this.computers = this.computers.filter((item) => item.id !== computerId);
         },
         error => console.error('error', error)
       )
