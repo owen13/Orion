@@ -30,6 +30,8 @@ namespace API
         {
             services.AddCors();
             services.AddControllers();
+
+            services.AddSwaggerGen();
             
             CommonConfig.Setup(services);
             
@@ -54,6 +56,13 @@ namespace API
                 .AllowCredentials());
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("swagger/v1/swagger.json", "API");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseRouting();
 
