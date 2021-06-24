@@ -60,5 +60,5 @@ jobs:
       with:
         app-name: 'APIOrion'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_97bd3fcacb07438787ed8c1898778f1e }}
+        publish-profile: ${{ secrets.ORION_API_PUBLISH_PROFILE }}
         package: .
