@@ -9,5 +9,20 @@ namespace Web.Controllers
         {
             return View();
         }
+
+        public IActionResult DisplayingData()
+        {
+            return View();
+        }
+
+        public IActionResult Events()
+        {
+            return View();
+        }
+
+        public IActionResult MonsterSlayer()
+        {
+            return View();
+        }
     }
 }

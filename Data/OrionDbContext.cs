@@ -26,7 +26,14 @@ namespace Data
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            #region actor data
+            PopulateActors(modelBuilder);
+            PopulateComputers(modelBuilder);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        private void PopulateActors(ModelBuilder modelBuilder)
+        {
             var movies = new Movie[] {
                 new Movie { Id = 1, Name = "Avengers: Endgame", WorldwideBoxOfficeGross = 2_797_800_564, DurationInMinutes = 181, Release = new DateTime(2019, 4, 26) },
                 new Movie { Id = 2, Name = "The Lion King", WorldwideBoxOfficeGross = 1_654_791_102, DurationInMinutes     = 118, Release = new DateTime(2019, 7, 19) },
@@ -118,9 +125,10 @@ namespace Data
                         }).ToList();
                 });
             modelBuilder.Entity<Rating>().HasData(ratings);
-            #endregion
-            
-            #region computer data
+        }
+        
+        private void PopulateComputers(ModelBuilder modelBuilder)
+        {
             // ENUMS
             var storageUnit = new StorageUnit[]
             {
@@ -249,10 +257,6 @@ namespace Data
                 }
             };
             modelBuilder.Entity<Computer>().HasData(computers);
-
-            #endregion
-            
-            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Mapster;
-using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
 using Models;
-using Models.Enums;
 
 namespace Data
 {

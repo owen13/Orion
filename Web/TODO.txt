@@ -1,12 +1,17 @@
 VUE
 
 REACT (new project)
+https://reactjs.org/docs/hooks-state.html (and following pages)
+https://reactjs.org/docs/hooks-overview.html#but-what-is-a-hook
+
+https://sunilsandhu.com/posts/i-created-the-exact-same-app-in-react-and-vue-2020-edition
+https://sunilsandhu.com/blog/i-created-the-exact-same-app-with-react-and-redux-here-are-the-differences
 
 Pass whole computer to onChange?
 
 https://blog.logrocket.com/modern-guide-react-state-patterns/
 
-https://reactjs.org/docs/hooks-state.html
+
 https://www.pluralsight.com/guides/dynamic-tables-from-editable-columns-in-react-html
 https://www.pluralsight.com/guides/creating-dynamic-editable-tables-with-reactjs
 https://devexpress.github.io/devextreme-reactive/react/grid/docs/guides/editing/

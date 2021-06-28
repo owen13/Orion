@@ -1,0 +1,46 @@
+@model object
+
+@{
+    // https://www.udemy.com/course/vuejs-2-the-complete-guide/learn/lecture/21463130#overview
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="/css/VueTutorial/displayingData.css">
+<script src="https://unpkg.com/vue@next"></script>
+
+<header>
+    <h1>Displaying Data</h1>
+</header>
+<section id="user-goal">
+    <h2>My Course Goal</h2>
+    <p>Goal 1: {{ courseGoalA }}</p>
+    <p>Goal 2: {{ courseGoalB }}</p>
+    <p>Random Goal: {{ randomGoal() }}</p>
+    <p>Learn more <a v-bind:href="vueLink">about Vue</a></p>
+    <p v-html="html"></p>
+</section>
+
+<script>
+    const userGoalsApp = Vue.createApp({
+        data() {
+          return {
+              courseGoalA: 'Finish the course and learn Vue',
+              courseGoalB: 'Master Vue and build amazing apps',
+              vueLink: 'https://vuejs.org',
+              html: '<h3>HTML Output</h3>'
+          };
+        },
+        methods: {
+            randomGoal() {
+                const randomNumber = Math.random();
+                if (randomNumber < 0.5) {
+                    return this.courseGoalA;    
+                } else {
+                    return this.courseGoalB;
+                }
+            }
+        }
+    });
+    userGoalsApp.mount('#user-goal');
+</script>
