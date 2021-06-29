@@ -107,8 +107,7 @@ else
 
     private void Edit(ComputerWithDescriptionsDto computer)
     {
-        if (_computerBeingEdited != null)
-            Cancel(computer);
+        Cancel(computer);
         
         _editedComputerId = computer.Id;
         _computerBeingEdited = computer.Adapt<ComputerWithDescriptionsDto>(); // back up current state
@@ -116,7 +115,10 @@ else
     
     private void Cancel(ComputerWithDescriptionsDto computer)
     {
-        int index = _computers.FindIndex(x => x.Id == computer.Id);
+        if (_computerBeingEdited == null)
+            return;
+        
+        int index = _computers.FindIndex(x => x.Id == _computerBeingEdited.Id);
         _computers[index] = _computerBeingEdited.Adapt<ComputerWithDescriptionsDto>();
 
         _editedComputerId = null;
@@ -125,10 +127,10 @@ else
     
     private async Task Delete(ComputerWithDescriptionsDto computer)
     {
-        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure? (the delete code is commented out so the computer will come back on refresh)");
         if (confirmed)
         {
-            _computerServiceAsync.DeleteComputer(computer.Id);
+            //_computerServiceAsync.DeleteComputer(computer.Id);
             _computers.Remove(computer);
             _editedComputerId = null;   
         }
