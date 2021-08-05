@@ -10,7 +10,7 @@ namespace Web.Controllers
             return View();
         }
 
-        public IActionResult DisplayingData()
+        public IActionResult DataBinding()
         {
             return View();
         }
