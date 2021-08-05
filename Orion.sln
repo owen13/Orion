@@ -1,26 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{F9713EDE-F705-4FBF-96E0-DF12085132FF}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{F9713EDE-F705-4FBF-96E0-DF12085132FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{11CE70EF-E431-4FEC-BB46-687C8FC31456}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "Utilities\Utilities.csproj", "{11CE70EF-E431-4FEC-BB46-687C8FC31456}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{59FC1B37-8B1B-4787-ABB6-FA119A0B5189}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{59FC1B37-8B1B-4787-ABB6-FA119A0B5189}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{D639B861-FEAB-428F-9124-1929FB4ECBC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{D639B861-FEAB-428F-9124-1929FB4ECBC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{985C5507-CC48-4D5D-8413-A9B03604CF50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{985C5507-CC48-4D5D-8413-A9B03604CF50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonConfiguration", "CommonConfiguration\CommonConfiguration.csproj", "{5D5AD454-1CB8-42F8-A956-023A3186AD20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonConfiguration", "CommonConfiguration\CommonConfiguration.csproj", "{5D5AD454-1CB8-42F8-A956-023A3186AD20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angular", "Angular\Angular.csproj", "{38BF60FA-2A0C-4AA3-8CEB-97202A6C5FC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Angular", "Angular\Angular.csproj", "{38BF60FA-2A0C-4AA3-8CEB-97202A6C5FC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{D7C52473-9617-444B-BA22-8AF1FC53E670}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{D7C52473-9617-444B-BA22-8AF1FC53E670}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor", "Blazor\Blazor.csproj", "{949FFD94-E964-4E42-A1D8-43DDDA52AA93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor", "Blazor\Blazor.csproj", "{949FFD94-E964-4E42-A1D8-43DDDA52AA93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{F562F7C8-61EE-40B3-A8D8-94CF2623742D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{F562F7C8-61EE-40B3-A8D8-94CF2623742D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "React", "React\React.csproj", "{B8A744F5-5B03-4D40-81E1-38C1C24C9679}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "React", "React\React.csproj", "{B8A744F5-5B03-4D40-81E1-38C1C24C9679}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vue", "Vue\Vue.csproj", "{FC94ED14-82EE-4ECD-8F59-1E7F0CA4AB90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,5 +77,15 @@ Global
 		{B8A744F5-5B03-4D40-81E1-38C1C24C9679}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A744F5-5B03-4D40-81E1-38C1C24C9679}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A744F5-5B03-4D40-81E1-38C1C24C9679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC94ED14-82EE-4ECD-8F59-1E7F0CA4AB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC94ED14-82EE-4ECD-8F59-1E7F0CA4AB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC94ED14-82EE-4ECD-8F59-1E7F0CA4AB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC94ED14-82EE-4ECD-8F59-1E7F0CA4AB90}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {069B2925-16D0-4A70-B0E5-3E57788F98B5}
 	EndGlobalSection
 EndGlobal
