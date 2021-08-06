@@ -30,6 +30,9 @@
                             <router-link :to="{ name: 'Events' }" class="nav-link text-dark">Events</router-link>
                         </li>
                         <li class="nav-item">
+                            <router-link :to="{ name: 'DynamicStyling' }" class="nav-link text-dark">Dynamic Styling</router-link>
+                        </li>
+                        <li class="nav-item">
                             <router-link :to="{ name: 'MonsterSlayer' }" class="nav-link text-dark">Monster Slayer</router-link>
                         </li>
                     </ul>

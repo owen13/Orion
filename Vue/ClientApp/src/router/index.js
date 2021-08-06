@@ -5,6 +5,7 @@ import FetchData from "@/components/FetchData.vue";
 
 import DataBinding from "@/components/DataBinding.vue";
 import Events from "@/components/Events.vue";
+import DynamicStyling from "@/components/DynamicStyling.vue";
 import MonsterSlayer from "@/components/MonsterSlayer.vue";
 
 const routes = [
@@ -32,6 +33,11 @@ const routes = [
         path: "/Events",
         name: "Events",
         component: Events,
+    },
+    {
+        path: "/DynamicStyling",
+        name: "DynamicStyling",
+        component: DynamicStyling,
     },
     {
         path: "/MonsterSlayer",
