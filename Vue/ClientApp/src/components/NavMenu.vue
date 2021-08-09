@@ -23,21 +23,24 @@
                         <li class="nav-item">
                             <router-link :to="{ name: 'FetchData' }" class="nav-link text-dark">Fetch Data</router-link>
                         </li>
-                        
-                        <!-- Section 2 -->
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'DataBinding' }" class="nav-link text-dark">Data Binding</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'Events' }" class="nav-link text-dark">Events</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'DynamicStyling' }" class="nav-link text-dark">Dynamic Styling</router-link>
-                        </li>
-                        
-                        <!-- Section 3 -->
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'ConditionalContentAndLists' }" class="nav-link text-dark">Conditional Content & Lists</router-link>
+
+                        <!-- Section 1-3 -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" @click="selectMenu('2')">The Basics</a>
+                            <ul class="dropdown-menu" :style="{display: selectedMenu === '2' ? 'block' : 'none'}">
+                                <li class="nav-link">
+                                    <router-link :to="{ name: 'DataBinding' }" class="nav-link text-dark">Data Binding</router-link>
+                                </li>
+                                <li class="nav-link">
+                                    <router-link :to="{ name: 'Events' }" class="nav-link text-dark">Events</router-link>
+                                </li>
+                                <li class="nav-link-item">
+                                    <router-link :to="{ name: 'DynamicStyling' }" class="nav-link text-dark">Dynamic Styling</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'ConditionalContentAndLists' }" class="nav-link text-dark">Conditional Content & Lists</router-link>
+                                </li>
+                            </ul>
                         </li>
 
                         <!-- Section 4 -->
@@ -78,7 +81,8 @@ export default {
     name: "NavMenu",
     data() {
         return {
-            isExpanded: false
+            isExpanded: false,
+            selectedMenu: ''
         }
     },
     methods: {
@@ -88,7 +92,16 @@ export default {
 
         toggle() {
             this.isExpanded = !this.isExpanded;
-        }
+        },
+         
+        selectMenu(menu) {
+            console.log(menu);
+            if (this.selectedMenu === menu)
+                this.selectedMenu = '';
+            else
+                this.selectedMenu = menu;
+        }   
+            
     }
 }
 </script>
