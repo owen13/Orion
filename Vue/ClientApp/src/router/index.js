@@ -8,6 +8,8 @@ import Events from "@/components/Events.vue";
 import DynamicStyling from "@/components/DynamicStyling.vue";
 import MonsterSlayer from "@/components/MonsterSlayer.vue";
 
+import ConditionalContentAndLists from "@/components/ConditionalContentAndLists.vue";
+
 const routes = [
     {
         path: "/",
@@ -24,6 +26,8 @@ const routes = [
         name: "FetchData",
         component: FetchData,
     },
+
+    // Section 2
     {
         path: "/DataBinding",
         name: "DataBinding",
@@ -39,11 +43,20 @@ const routes = [
         name: "DynamicStyling",
         component: DynamicStyling,
     },
+
+    // Section 3
+    {
+        path: "/ConditionalContentAndLists",
+        name: "ConditionalContentAndLists",
+        component: ConditionalContentAndLists,
+    },
+
+    // Section 4
     {
         path: "/MonsterSlayer",
         name: "MonsterSlayer",
         component: MonsterSlayer,
-    }
+    },
 ];
 
 const router = createRouter({

@@ -23,6 +23,8 @@
                         <li class="nav-item">
                             <router-link :to="{ name: 'FetchData' }" class="nav-link text-dark">Fetch Data</router-link>
                         </li>
+                        
+                        <!-- Section 2 -->
                         <li class="nav-item">
                             <router-link :to="{ name: 'DataBinding' }" class="nav-link text-dark">Data Binding</router-link>
                         </li>
@@ -32,6 +34,13 @@
                         <li class="nav-item">
                             <router-link :to="{ name: 'DynamicStyling' }" class="nav-link text-dark">Dynamic Styling</router-link>
                         </li>
+                        
+                        <!-- Section 3 -->
+                        <li class="nav-item">
+                            <router-link :to="{ name: 'ConditionalContentAndLists' }" class="nav-link text-dark">Conditional Content & Lists</router-link>
+                        </li>
+
+                        <!-- Section 4 -->
                         <li class="nav-item">
                             <router-link :to="{ name: 'MonsterSlayer' }" class="nav-link text-dark">Monster Slayer</router-link>
                         </li>
