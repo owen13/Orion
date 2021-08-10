@@ -10,7 +10,8 @@ import ConditionalContentAndLists from "@/components/TheBasics/ConditionalConten
 import MonsterSlayer from "@/components/TheBasics/MonsterSlayer.vue";
 
 import BehindTheScenes from "@/components/BehindTheScenes.vue";
-import Components from "@/components/Components.vue"
+import TheProblem from "@/components/Components/TheProblem.vue"
+import TheSolution from "@/components/Components/TheSolution.vue"
 
 const routes = [
     {
@@ -69,9 +70,14 @@ const routes = [
 
     // Section 6
     {
-        path: "/Components",
-        name: "Components",
-        component: Components,
+        path: "/Components/TheProblem",
+        name: "TheProblem",
+        component: TheProblem,
+    },
+    {
+        path: "/Components/TheSolution",
+        name: "TheSolution",
+        component: TheSolution,
     },
     
 ];

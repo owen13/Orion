@@ -53,18 +53,26 @@
                                 </li>
                             </ul>
                         </li>
-
-
-
+                        
                         <!-- Section 5 -->
                         <li class="nav-item">
                             <router-link :to="{ name: 'BehindTheScenes' }" class="nav-link text-dark">Behind the Scenes</router-link>
                         </li>
 
-                        <!-- Section 6 -->
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'Components' }" class="nav-link text-dark">Components</router-link>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" @click="selectMenu('Components')">Components</a>
+                            <ul class="dropdown-menu" :style="{display: selectedMenu === 'Components' ? 'block' : 'none'}">
+                                <!-- Section 6 -->
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'TheProblem' }" class="nav-link text-dark">The Problem</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'TheSolution' }" class="nav-link text-dark">The Solution</router-link>
+                                </li>
+                            </ul>
                         </li>
+                        
+
                         
                     </ul>
                 </div>

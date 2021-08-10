@@ -1,3 +1,5 @@
+import 
+
 <template>
     <header>
         <h1>Friend List</h1>
@@ -20,7 +22,7 @@
 
 <script>
     export default {
-        name: "Components",
+        name: "TheProblem",
         data() {
             return {
                 detailsAreVisible: false,
