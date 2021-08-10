@@ -1,14 +1,16 @@
 ﻿import { createWebHistory, createRouter } from "vue-router";
 import Home from "@/components/Home.vue";
-import Counter from "@/components/Counter.vue";
-import FetchData from "@/components/FetchData.vue";
+import Counter from "@/components/Template/Counter.vue";
+import FetchData from "@/components/Template/FetchData.vue";
 
-import DataBinding from "@/components/DataBinding.vue";
-import Events from "@/components/Events.vue";
-import DynamicStyling from "@/components/DynamicStyling.vue";
-import MonsterSlayer from "@/components/MonsterSlayer.vue";
+import DataBinding from "@/components/TheBasics/DataBinding.vue";
+import Events from "@/components/TheBasics/Events.vue";
+import DynamicStyling from "@/components/TheBasics/DynamicStyling.vue";
+import ConditionalContentAndLists from "@/components/TheBasics/ConditionalContentAndLists.vue";
+import MonsterSlayer from "@/components/TheBasics/MonsterSlayer.vue";
 
-import ConditionalContentAndLists from "@/components/ConditionalContentAndLists.vue";
+import BehindTheScenes from "@/components/BehindTheScenes.vue";
+import Components from "@/components/Components.vue"
 
 const routes = [
     {
@@ -17,46 +19,61 @@ const routes = [
         component: Home,
     },
     {
-        path: "/Counter",
+        path: "/Template/Counter",
         name: "Counter",
         component: Counter,
     },
     {
-        path: "/FetchData",
+        path: "/Template/FetchData",
         name: "FetchData",
         component: FetchData,
     },
 
     // Section 2
     {
-        path: "/DataBinding",
+        path: "/TheBasics/DataBinding",
         name: "DataBinding",
         component: DataBinding,
     },
     {
-        path: "/Events",
+        path: "/TheBasics/Events",
         name: "Events",
         component: Events,
     },
     {
-        path: "/DynamicStyling",
+        path: "/TheBasics/DynamicStyling",
         name: "DynamicStyling",
         component: DynamicStyling,
     },
 
     // Section 3
     {
-        path: "/ConditionalContentAndLists",
+        path: "/TheBasics/ConditionalContentAndLists",
         name: "ConditionalContentAndLists",
         component: ConditionalContentAndLists,
     },
 
     // Section 4
     {
-        path: "/MonsterSlayer",
+        path: "/TheBasics/MonsterSlayer",
         name: "MonsterSlayer",
         component: MonsterSlayer,
     },
+
+    // Section 5
+    {
+        path: "/BehindTheScenes",
+        name: "BehindTheScenes",
+        component: BehindTheScenes,
+    },
+
+    // Section 6
+    {
+        path: "/Components",
+        name: "Components",
+        component: Components,
+    },
+    
 ];
 
 const router = createRouter({

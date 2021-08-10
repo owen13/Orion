@@ -17,12 +17,19 @@
                         <li class="nav-item">
                             <router-link :to="{ name: 'Home' }" class="nav-link text-dark">Home</router-link>
                         </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'Counter' }" class="nav-link text-dark">Counter</router-link>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle" @click="selectMenu('Template')">Template</a>
+                            <ul class="dropdown-menu" :style="{display: selectedMenu === 'Template' ? 'block' : 'none'}">
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'Counter' }" class="nav-link text-dark">Counter</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'FetchData' }" class="nav-link text-dark">Fetch Data</router-link>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'FetchData' }" class="nav-link text-dark">Fetch Data</router-link>
-                        </li>
+
 
                         <!-- Section 1-3 -->
                         <li class="nav-item dropdown">
@@ -40,13 +47,25 @@
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'ConditionalContentAndLists' }" class="nav-link text-dark">Conditional Content & Lists</router-link>
                                 </li>
+                                <!-- Section 4 -->
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'MonsterSlayer' }" class="nav-link text-dark">Monster Slayer</router-link>
+                                </li>
                             </ul>
                         </li>
 
-                        <!-- Section 4 -->
+
+
+                        <!-- Section 5 -->
                         <li class="nav-item">
-                            <router-link :to="{ name: 'MonsterSlayer' }" class="nav-link text-dark">Monster Slayer</router-link>
+                            <router-link :to="{ name: 'BehindTheScenes' }" class="nav-link text-dark">Behind the Scenes</router-link>
                         </li>
+
+                        <!-- Section 6 -->
+                        <li class="nav-item">
+                            <router-link :to="{ name: 'Components' }" class="nav-link text-dark">Components</router-link>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

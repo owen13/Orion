@@ -106,5 +106,5 @@ export default {
 }
 </script>
 
-<style scoped src="../assets/styles/MonsterSlayer.css">
+<style scoped src="@/assets/styles/MonsterSlayer.css">
 </style>
