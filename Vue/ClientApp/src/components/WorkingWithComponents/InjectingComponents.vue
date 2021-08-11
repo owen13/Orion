@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import ActiveElement from "@/components/WorkingWithComponents/KnowledgeBase1/ActiveElement";
-import KnowledgeBase from "@/components/WorkingWithComponents/KnowledgeBase1/KnowledgeBase";
+import ActiveElement from "@/components/WorkingWithComponents/KnowledgeBase2/ActiveElement";
+import KnowledgeBase from "@/components/WorkingWithComponents/KnowledgeBase2/KnowledgeBase";
 
 export default {
-    name: "ComponentsPassingOnVariables",
+    name: "InjectingComponents",
     components: {ActiveElement, KnowledgeBase},
     data() {
         return {
@@ -46,60 +46,60 @@ export default {
 </script>
 
 <style scoped>
-    /deep/ * {
-        box-sizing: border-box;
-    }
-    /deep/ html {
-        font-family: sans-serif;
-    }
-    /deep/ body {
-        margin: 0;
-    }
-    /deep/ section {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-        margin: 2rem auto;
-        max-width: 40rem;
-        padding: 1rem;
-        border-radius: 12px;
-    }
+/deep/ * {
+    box-sizing: border-box;
+}
+/deep/ html {
+    font-family: sans-serif;
+}
+/deep/ body {
+    margin: 0;
+}
+/deep/ section {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    margin: 2rem auto;
+    max-width: 40rem;
+    padding: 1rem;
+    border-radius: 12px;
+}
 
-    /deep/ ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-    }
+/deep/ ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
-    /deep/ li {
-        border-radius: 12px;
-        border: 1px solid #ccc;
-        padding: 1rem;
-        width: 15rem;
-        margin: 0 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+/deep/ li {
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 15rem;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-    /deep/ h2 {
-        margin: 0.75rem 0;
-        text-align: center;
-    }
+/deep/ h2 {
+    margin: 0.75rem 0;
+    text-align: center;
+}
 
-    /deep/ button {
-        font: inherit;
-        border: 1px solid #c70053;
-        background-color: #c70053;
-        color: white;
-        padding: 0.75rem 2rem;
-        border-radius: 30px;
-        cursor: pointer;
-    }
+/deep/ button {
+    font: inherit;
+    border: 1px solid #c70053;
+    background-color: #c70053;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+}
 
-    /deep/ button:hover,
-    /deep/ button:active {
-        background-color: #e24d8b;
-        border-color: #e24d8b;
-    }
+/deep/ button:hover,
+/deep/ button:active {
+    background-color: #e24d8b;
+    border-color: #e24d8b;
+}
 </style>

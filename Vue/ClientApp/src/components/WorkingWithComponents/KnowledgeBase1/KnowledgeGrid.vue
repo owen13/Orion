@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import KnowledgeElement from "@/components/WorkingWithComponents/KnowledgeBase/KnowledgeElement";
+import KnowledgeElement from "./KnowledgeElement";
 
 export default {
     components: {KnowledgeElement},

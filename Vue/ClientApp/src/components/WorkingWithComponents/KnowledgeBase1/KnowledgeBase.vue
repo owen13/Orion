@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import KnowledgeGrid from "@/components/WorkingWithComponents/KnowledgeBase/KnowledgeGrid";
+import KnowledgeGrid from "./KnowledgeGrid";
 
 export default {
     components: {KnowledgeGrid},
