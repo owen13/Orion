@@ -22,7 +22,7 @@ import
 
 <script>
     export default {
-        name: "ChildComponentsNeeded",
+        name: "FriendDirectory_NeedsChildComponents",
         data() {
             return {
                 detailsAreVisible: false,

@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import NewFriend from "./FriendDirectoryComponents/NewFriend"
-import FriendContact from "./FriendDirectoryComponents/FriendContact"
+import NewFriend from "./FriendDirectory/NewFriend"
+import FriendContact from "./FriendDirectory/FriendContact"
 
 export default {
-    name: "FriendDirectory",
+    name: "FriendDirectory_UsingChildComponents",
     components: {NewFriend, FriendContact},
     data() {
         return {

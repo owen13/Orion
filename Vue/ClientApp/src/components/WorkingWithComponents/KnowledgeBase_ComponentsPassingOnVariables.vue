@@ -13,7 +13,7 @@ import ActiveElement from "@/components/WorkingWithComponents/KnowledgeBase1/Act
 import KnowledgeBase from "@/components/WorkingWithComponents/KnowledgeBase1/KnowledgeBase";
 
 export default {
-    name: "ComponentsPassingOnVariables",
+    name: "KnowledgeBase_ComponentsPassingOnVariables",
     components: {ActiveElement, KnowledgeBase},
     data() {
         return {

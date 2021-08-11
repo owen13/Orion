@@ -63,16 +63,19 @@
                             <ul class="dropdown-menu" :style="{display: selectedMenu === 'Components' ? 'block' : 'none'}">
                                 <!-- Section 6 -->
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'ChildComponentsNeeded' }" class="nav-link text-dark">Problem: Child Components Needed</router-link>
+                                    <router-link :to="{ name: 'FriendDirectory_NeedsChildComponents' }" class="nav-link text-dark">Problem: Child Components Needed</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'FriendDirectory' }" class="nav-link text-dark">Solution: Talking to Child Components</router-link>
+                                    <router-link :to="{ name: 'FriendDirectory_UsingChildComponents' }" class="nav-link text-dark">Solution: Talking to Child Components</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'ComponentsPassingOnVariables' }" class="nav-link text-dark">Problem: Components Passing on variables</router-link>
+                                    <router-link :to="{ name: 'KnowledgeBase_ComponentsPassingOnVariables' }" class="nav-link text-dark">Problem: Components Passing on variables</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'InjectingComponents' }" class="nav-link text-dark">Solution: Injecting Components</router-link>
+                                    <router-link :to="{ name: 'KnowledgeBase_InjectingComponents' }" class="nav-link text-dark">Solution: Injecting Components</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'MoreOnComponents' }" class="nav-link text-dark">More on Components</router-link>
                                 </li>
                             </ul>
                         </li>

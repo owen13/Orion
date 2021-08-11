@@ -8,13 +8,14 @@ import Events from "@/components/TheBasics/Events.vue";
 import DynamicStyling from "@/components/TheBasics/DynamicStyling.vue";
 import ConditionalContentAndLists from "@/components/TheBasics/ConditionalContentAndLists.vue";
 import MonsterSlayer from "@/components/TheBasics/MonsterSlayer.vue";
-
 import BehindTheScenes from "@/components/BehindTheScenes.vue";
 
-import ChildComponentsNeeded from "@/components/WorkingWithComponents/ChildComponentsNeeded.vue"
-import ChildComponents from "@/components/WorkingWithComponents/FriendDirectory.vue"
-import ComponentsPassingOnVariables from "@/components/WorkingWithComponents/ComponentsPassingOnVariables.vue"
-import InjectingComponents from "@/components/WorkingWithComponents/InjectingComponents.vue"
+import FriendDirectory_NeedsChildComponents from "@/components/WorkingWithComponents/FriendDirectory_NeedsChildComponents.vue"
+import FriendDirectory_UsingChildComponents from "@/components/WorkingWithComponents/FriendDirectory_UsingChildComponents.vue"
+import KnowledgeBase_ComponentsPassingOnVariables from "@/components/WorkingWithComponents/KnowledgeBase_ComponentsPassingOnVariables.vue"
+import KnowledgeBase_InjectingComponents from "@/components/WorkingWithComponents/KnowledgeBase_InjectingComponents.vue"
+import MoreOnComponents from "@/components/WorkingWithComponents/MoreOnComponents.vue"
+
 
 const routes = [
     {
@@ -73,25 +74,33 @@ const routes = [
 
     // Section 6
     {
-        path: "/WorkingWithComponents/ChildComponentsNeeded",
-        name: "ChildComponentsNeeded",
-        component: ChildComponentsNeeded,
+        path: "/WorkingWithComponents/FriendDirectory_NeedsChildComponents",
+        name: "FriendDirectory_NeedsChildComponents",
+        component: FriendDirectory_NeedsChildComponents,
     },
     {
-        path: "/WorkingWithComponents/FriendDirectory",
-        name: "FriendDirectory",
-        component: ChildComponents,
+        path: "/WorkingWithComponents/FriendDirectory_UsingChildComponents",
+        name: "FriendDirectory_UsingChildComponents",
+        component: FriendDirectory_UsingChildComponents,
+    },
+    // Section 8
+    {
+        path: "/WorkingWithComponents/KnowledgeBase_ComponentsPassingOnVariables",
+        name: "KnowledgeBase_ComponentsPassingOnVariables",
+        component: KnowledgeBase_ComponentsPassingOnVariables,
     },
     {
-        path: "/WorkingWithComponents/ComponentsPassingOnVariables",
-        name: "ComponentsPassingOnVariables",
-        component: ComponentsPassingOnVariables,
+        path: "/WorkingWithComponents/KnowledgeBase_InjectingComponents",
+        name: "KnowledgeBase_InjectingComponents",
+        component: KnowledgeBase_InjectingComponents,
     },
+    // Section 9
     {
-        path: "/WorkingWithComponents/InjectingComponents",
-        name: "InjectingComponents",
-        component: InjectingComponents,
+        path: "/WorkingWithComponents/MoreOnComponents",
+        name: "MoreOnComponents",
+        component: MoreOnComponents,
     },
+    
     
 ];
 

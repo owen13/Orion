@@ -13,7 +13,7 @@ import ActiveElement from "@/components/WorkingWithComponents/KnowledgeBase2/Act
 import KnowledgeBase from "@/components/WorkingWithComponents/KnowledgeBase2/KnowledgeBase";
 
 export default {
-    name: "InjectingComponents",
+    name: "KnowledgeBase_InjectingComponents",
     components: {ActiveElement, KnowledgeBase},
     data() {
         return {
