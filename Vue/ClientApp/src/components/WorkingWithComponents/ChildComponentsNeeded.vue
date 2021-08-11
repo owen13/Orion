@@ -22,7 +22,7 @@ import
 
 <script>
     export default {
-        name: "TheProblem",
+        name: "ChildComponentsNeeded",
         data() {
             return {
                 detailsAreVisible: false,

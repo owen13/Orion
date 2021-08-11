@@ -64,13 +64,13 @@
                             <ul class="dropdown-menu" :style="{display: selectedMenu === 'Components' ? 'block' : 'none'}">
                                 <!-- Section 6 -->
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'TheProblem' }" class="nav-link text-dark">The Problem</router-link>
+                                    <router-link :to="{ name: 'ChildComponentsNeeded' }" class="nav-link text-dark">Problem: Child Components Needed</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'FriendDirectory' }" class="nav-link text-dark">Talking to Child Components</router-link>
+                                    <router-link :to="{ name: 'FriendDirectory' }" class="nav-link text-dark">Solution: Talking to Child Components</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'MoreWithComponents' }" class="nav-link text-dark">More with Components</router-link>
+                                    <router-link :to="{ name: 'ComponentsPassingOnVariables' }" class="nav-link text-dark">Problem: Components Passing on variables</router-link>
                                 </li>
                             </ul>
                         </li>

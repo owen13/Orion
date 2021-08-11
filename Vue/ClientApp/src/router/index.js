@@ -11,9 +11,9 @@ import MonsterSlayer from "@/components/TheBasics/MonsterSlayer.vue";
 
 import BehindTheScenes from "@/components/BehindTheScenes.vue";
 
-import TheProblem from "@/components/WorkingWithComponents/TheProblem.vue"
+import ChildComponentsNeeded from "@/components/WorkingWithComponents/ChildComponentsNeeded.vue"
 import ChildComponents from "@/components/WorkingWithComponents/FriendDirectory.vue"
-import MoreWithComponents from "@/components/WorkingWithComponents/MoreWithComponents.vue"
+import ComponentsPassingOnVariables from "@/components/WorkingWithComponents/ComponentsPassingOnVariables.vue"
 
 const routes = [
     {
@@ -72,9 +72,9 @@ const routes = [
 
     // Section 6
     {
-        path: "/WorkingWithComponents/TheProblem",
-        name: "TheProblem",
-        component: TheProblem,
+        path: "/WorkingWithComponents/ChildComponentsNeeded",
+        name: "ChildComponentsNeeded",
+        component: ChildComponentsNeeded,
     },
     {
         path: "/WorkingWithComponents/FriendDirectory",
@@ -82,9 +82,9 @@ const routes = [
         component: ChildComponents,
     },
     {
-        path: "/WorkingWithComponents/MoreWithComponents",
-        name: "MoreWithComponents",
-        component: MoreWithComponents,
+        path: "/WorkingWithComponents/ComponentsPassingOnVariables",
+        name: "ComponentsPassingOnVariables",
+        component: ComponentsPassingOnVariables,
     },
     
 ];
