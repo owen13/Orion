@@ -14,6 +14,7 @@ import BehindTheScenes from "@/components/BehindTheScenes.vue";
 import ChildComponentsNeeded from "@/components/WorkingWithComponents/ChildComponentsNeeded.vue"
 import ChildComponents from "@/components/WorkingWithComponents/FriendDirectory.vue"
 import ComponentsPassingOnVariables from "@/components/WorkingWithComponents/ComponentsPassingOnVariables.vue"
+import InjectingComponents from "@/components/WorkingWithComponents/InjectingComponents.vue"
 
 const routes = [
     {
@@ -85,6 +86,11 @@ const routes = [
         path: "/WorkingWithComponents/ComponentsPassingOnVariables",
         name: "ComponentsPassingOnVariables",
         component: ComponentsPassingOnVariables,
+    },
+    {
+        path: "/WorkingWithComponents/InjectingComponents",
+        name: "InjectingComponents",
+        component: InjectingComponents,
     },
     
 ];

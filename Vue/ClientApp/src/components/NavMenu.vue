@@ -51,14 +51,13 @@
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'MonsterSlayer' }" class="nav-link text-dark">Monster Slayer</router-link>
                                 </li>
+                                <!-- Section 5 -->
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'BehindTheScenes' }" class="nav-link text-dark">Behind the Scenes</router-link>
+                                </li>
                             </ul>
                         </li>
                         
-                        <!-- Section 5 -->
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'BehindTheScenes' }" class="nav-link text-dark">Behind the Scenes</router-link>
-                        </li>
-
                         <li class="nav-item dropdown">
                             <a class="nav-link text-dark dropdown-toggle" @click="selectMenu('Components')">Components</a>
                             <ul class="dropdown-menu" :style="{display: selectedMenu === 'Components' ? 'block' : 'none'}">
@@ -71,6 +70,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'ComponentsPassingOnVariables' }" class="nav-link text-dark">Problem: Components Passing on variables</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'InjectingComponents' }" class="nav-link text-dark">Solution: Injecting Components</router-link>
                                 </li>
                             </ul>
                         </li>
@@ -122,7 +124,6 @@ export default {
         },
          
         selectMenu(menu) {
-            console.log(menu);
             if (this.selectedMenu === menu)
                 this.selectedMenu = '';
             else
