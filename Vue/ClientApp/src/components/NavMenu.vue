@@ -67,7 +67,7 @@
                                     <router-link :to="{ name: 'TheProblem' }" class="nav-link text-dark">The Problem</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'TheSolution' }" class="nav-link text-dark">The Solution</router-link>
+                                    <router-link :to="{ name: 'TalkingToChildComponents' }" class="nav-link text-dark">Talking to Child Components</router-link>
                                 </li>
                             </ul>
                         </li>
