@@ -12,7 +12,8 @@ import MonsterSlayer from "@/components/TheBasics/MonsterSlayer.vue";
 import BehindTheScenes from "@/components/BehindTheScenes.vue";
 
 import TheProblem from "@/components/WorkingWithComponents/TheProblem.vue"
-import ChildComponents from "@/components/WorkingWithComponents/TalkingToChildComponents.vue"
+import ChildComponents from "@/components/WorkingWithComponents/FriendDirectory.vue"
+import MoreWithComponents from "@/components/WorkingWithComponents/MoreWithComponents.vue"
 
 const routes = [
     {
@@ -76,8 +77,8 @@ const routes = [
         component: TheProblem,
     },
     {
-        path: "/WorkingWithComponents/TalkingToChildComponents",
-        name: "TalkingToChildComponents",
+        path: "/WorkingWithComponents/FriendDirectory",
+        name: "FriendDirectory",
         component: ChildComponents,
     },
     {

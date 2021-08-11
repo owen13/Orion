@@ -2,8 +2,8 @@
     <header>
         <h1>Friend List</h1>
     </header>
-    <new-friend @add-friend="addFriend"></new-friend>
     <section id="app">
+        <new-friend @add-friend="addFriend"></new-friend>
         <ul>
             <friend-contact v-for="friend in friends"
                 :key="friend.id"
@@ -20,10 +20,11 @@
 </template>
 
 <script>
-import NewFriend from "./Friends/NewFriend"
-import FriendContact from "./Friends/FriendContact"
+import NewFriend from "./FriendDirectoryComponents/NewFriend"
+import FriendContact from "./FriendDirectoryComponents/FriendContact"
+
 export default {
-    name: "TalkingToChildComponents",
+    name: "FriendDirectory",
     components: {NewFriend, FriendContact},
     data() {
         return {
@@ -70,15 +71,15 @@ export default {
     * {
         box-sizing: border-box;
     }
-    
+
     html {
         font-family: 'Jost', sans-serif;
     }
-    
+
     body {
         margin: 0;
     }
-    
+
     header {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
         margin: 3rem auto;

@@ -4,8 +4,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
-import NewFriend from './components/WorkingWithComponents/Friends/NewFriend'
-import FriendContact from './components/WorkingWithComponents/Friends/FriendContact'
+import NewFriend from './components/WorkingWithComponents/FriendDirectoryComponents/NewFriend'
+import FriendContact from './components/WorkingWithComponents/FriendDirectoryComponents/FriendContact'
  
 import ActiveElement from './components/WorkingWithComponents/KnowledgeBase/ActiveElement.vue';
 import KnowledgeBase from './components/WorkingWithComponents/KnowledgeBase/KnowledgeBase.vue';
@@ -23,4 +23,4 @@ app.component('knowledge-element', KnowledgeElement);
 app.component('knowledge-grid', KnowledgeGrid);
 
 app.use(router)
-app.mount('#app')
+app.mount('#myApp')

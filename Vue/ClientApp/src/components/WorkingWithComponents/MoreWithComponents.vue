@@ -9,8 +9,12 @@
 </template>
 
 <script>
+import ActiveElement from "@/components/WorkingWithComponents/KnowledgeBase/ActiveElement";
+import KnowledgeBase from "@/components/WorkingWithComponents/KnowledgeBase/KnowledgeBase";
+
 export default {
     name: "MoreWithComponents",
+    components: {ActiveElement, KnowledgeBase},
     data() {
         return {
             topics: [
@@ -42,32 +46,32 @@ export default {
 </script>
 
 <style scoped>
-    * {
+    /deep/ * {
         box-sizing: border-box;
     }
-    html {
+    /deep/ html {
         font-family: sans-serif;
     }
-    body {
+    /deep/ body {
         margin: 0;
     }
-    section {
+    /deep/ section {
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
         margin: 2rem auto;
         max-width: 40rem;
         padding: 1rem;
         border-radius: 12px;
     }
-    
-    ul {
+
+    /deep/ ul {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
         justify-content: center;
     }
-    
-    li {
+
+    /deep/ li {
         border-radius: 12px;
         border: 1px solid #ccc;
         padding: 1rem;
@@ -77,13 +81,13 @@ export default {
         flex-direction: column;
         justify-content: space-between;
     }
-    
-    h2 {
+
+    /deep/ h2 {
         margin: 0.75rem 0;
         text-align: center;
     }
-    
-    button {
+
+    /deep/ button {
         font: inherit;
         border: 1px solid #c70053;
         background-color: #c70053;
@@ -92,9 +96,9 @@ export default {
         border-radius: 30px;
         cursor: pointer;
     }
-    
-    button:hover,
-    button:active {
+
+    /deep/ button:hover,
+    /deep/ button:active {
         background-color: #e24d8b;
         border-color: #e24d8b;
     }
