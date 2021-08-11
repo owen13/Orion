@@ -80,6 +80,11 @@ const routes = [
         name: "TalkingToChildComponents",
         component: ChildComponents,
     },
+    {
+        path: "/WorkingWithComponents/MoreWithComponents",
+        name: "MoreWithComponents",
+        component: MoreWithComponents,
+    },
     
 ];
 

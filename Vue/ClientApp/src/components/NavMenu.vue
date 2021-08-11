@@ -69,11 +69,11 @@
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'TalkingToChildComponents' }" class="nav-link text-dark">Talking to Child Components</router-link>
                                 </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'MoreWithComponents' }" class="nav-link text-dark">More with Components</router-link>
+                                </li>
                             </ul>
                         </li>
-                        
-
-                        
                     </ul>
                 </div>
             </div>
