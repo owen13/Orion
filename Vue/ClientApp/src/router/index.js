@@ -14,7 +14,8 @@ import FriendDirectory_NeedsChildComponents from "@/components/WorkingWithCompon
 import FriendDirectory_UsingChildComponents from "@/components/WorkingWithComponents/FriendDirectory_UsingChildComponents.vue"
 import KnowledgeBase_ComponentsPassingOnVariables from "@/components/WorkingWithComponents/KnowledgeBase_ComponentsPassingOnVariables.vue"
 import KnowledgeBase_InjectingComponents from "@/components/WorkingWithComponents/KnowledgeBase_InjectingComponents.vue"
-import MoreOnComponents from "@/components/WorkingWithComponents/MoreOnComponents.vue"
+import UsingSlots from "@/components/WorkingWithComponents/UsingSlots.vue"
+import DynamicComponents from "@/components/WorkingWithComponents/DynamicComponents.vue"
 
 
 const routes = [
@@ -96,9 +97,14 @@ const routes = [
     },
     // Section 9
     {
-        path: "/WorkingWithComponents/MoreOnComponents",
-        name: "MoreOnComponents",
-        component: MoreOnComponents,
+        path: "/WorkingWithComponents/UsingSlots",
+        name: "UsingSlots",
+        component: UsingSlots,
+    },
+    {
+        path: "/WorkingWithComponents/DynamicComponents",
+        name: "DynamicComponents",
+        component: DynamicComponents,
     },
     
     

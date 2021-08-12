@@ -1,41 +1,47 @@
 <template>
     <div id="app">
-        <the-header></the-header>
         <!-- <TheHeader /> -->
+        <the-header></the-header>
         <badge-list></badge-list>
         <user-info
             :full-name="activeUser.name"
             :info-text="activeUser.description"
             :role="activeUser.role"
         ></user-info>
+        
+        <active-goals></active-goals>
+        <manage-goals></manage-goals>
         <CourseGoals>
             <template #default="slotProps">
                 <h2>{{ slotProps.item }}</h2>
                 <p>{{ slotProps['another-prop'] }}</p>
             </template>
         </CourseGoals>
-        <CourseGoals #default="slotProps">
-            <h2>{{ slotProps.item }}</h2>
-            <p>{{ slotProps['another-prop'] }}</p>
-        </CourseGoals>
+<!--        <CourseGoals #default="slotProps">-->
+<!--            <h2>{{ slotProps.item }}</h2>-->
+<!--            <p>{{ slotProps['another-prop'] }}</p>-->
+<!--        </CourseGoals>-->
     </div>
 </template>
 
 
 
 <script>
-import TheHeader from "@/components/WorkingWithComponents/MoreOnComponents/TheHeader";
-import BadgeList from "@/components/WorkingWithComponents/MoreOnComponents/BadgeList";
-import UserInfo from "@/components/WorkingWithComponents/MoreOnComponents/UserInfo";
-import CourseGoals from "@/components/WorkingWithComponents/MoreOnComponents/CourseGoals";
+import TheHeader from "@/components/WorkingWithComponents/UsingSlots/TheHeader";
+import BadgeList from "@/components/WorkingWithComponents/UsingSlots/BadgeList";
+import UserInfo from "@/components/WorkingWithComponents/UsingSlots/UserInfo";
+
+import CourseGoals from "@/components/WorkingWithComponents/UsingSlots/CourseGoals";
+
 
 export default {
-    name: "MoreOnComponents",
+    name: "UsingSlots",
     components: {
         TheHeader: TheHeader, 
         'badge-list': BadgeList, 
-        UserInfo,
-        CourseGoals},
+        UserInfo, 
+        CourseGoals,
+    },
     data() {
         return {
             activeUser: {

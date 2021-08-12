@@ -75,7 +75,10 @@
                                     <router-link :to="{ name: 'KnowledgeBase_InjectingComponents' }" class="nav-link text-dark">Solution: Injecting Components</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'MoreOnComponents' }" class="nav-link text-dark">More on Components</router-link>
+                                    <router-link :to="{ name: 'UsingSlots' }" class="nav-link text-dark">Slots</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'DynamicComponents' }" class="nav-link text-dark">Dynamic Components, Dialogs, Teleporting</router-link>
                                 </li>
                             </ul>
                         </li>
