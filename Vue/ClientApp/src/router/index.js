@@ -8,7 +8,7 @@ import Events from "@/components/TheBasics/Events.vue";
 import DynamicStyling from "@/components/TheBasics/DynamicStyling.vue";
 import ConditionalContentAndLists from "@/components/TheBasics/ConditionalContentAndLists.vue";
 import MonsterSlayer from "@/components/TheBasics/MonsterSlayer.vue";
-import BehindTheScenes from "@/components/BehindTheScenes.vue";
+import BehindTheScenes from "@/components/TheBasics/BehindTheScenes.vue";
 
 import FriendDirectory_NeedsChildComponents from "@/components/WorkingWithComponents/FriendDirectory_NeedsChildComponents.vue"
 import FriendDirectory_UsingChildComponents from "@/components/WorkingWithComponents/FriendDirectory_UsingChildComponents.vue"
@@ -16,7 +16,7 @@ import KnowledgeBase_ComponentsPassingOnVariables from "@/components/WorkingWith
 import KnowledgeBase_InjectingComponents from "@/components/WorkingWithComponents/KnowledgeBase_InjectingComponents.vue"
 import UsingSlots from "@/components/WorkingWithComponents/UsingSlots.vue"
 import DynamicComponents from "@/components/WorkingWithComponents/DynamicComponents.vue"
-
+import LearningResourcesApp from "@/components/WorkingWithComponents/LearningResourcesApp.vue"
 
 const routes = [
     {
@@ -68,7 +68,7 @@ const routes = [
 
     // Section 5
     {
-        path: "/BehindTheScenes",
+        path: "/TheBasics/BehindTheScenes",
         name: "BehindTheScenes",
         component: BehindTheScenes,
     },
@@ -106,6 +106,12 @@ const routes = [
         name: "DynamicComponents",
         component: DynamicComponents,
     },
+    // Section 10
+    {
+        path: "/WorkingWithComponents/LearningResourcesApp",
+        name: "LearningResourcesApp",
+        component: LearningResourcesApp
+    }
     
     
 ];

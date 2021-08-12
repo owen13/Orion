@@ -6,18 +6,20 @@
 <script>
     import NavMenu from './components/NavMenu.vue'
 
-export default {
-  name: 'App',
-  components: {
-      NavMenu
-  }
-}
+    export default {
+      name: 'App',
+      components: {
+          NavMenu
+      }
+    }
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 #myApp {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Jost, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

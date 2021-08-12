@@ -49,7 +49,7 @@
                                 </li>
                                 <!-- Section 4 -->
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'MonsterSlayer' }" class="nav-link text-dark">Monster Slayer</router-link>
+                                    <router-link :to="{ name: 'MonsterSlayer' }" class="nav-link text-dark"><b>Project: Monster Slayer</b></router-link>
                                 </li>
                                 <!-- Section 5 -->
                                 <li class="nav-item">
@@ -79,6 +79,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'DynamicComponents' }" class="nav-link text-dark">Dynamic Components, Dialogs, Teleporting</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'LearningResourcesApp' }" class="nav-link text-dark"><b>Project: The Learning Resources App</b></router-link>
                                 </li>
                             </ul>
                         </li>
