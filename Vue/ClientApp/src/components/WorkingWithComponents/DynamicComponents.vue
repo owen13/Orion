@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <the-header></the-header>
+        <the-header>Dynamic Components</the-header>
         <button @click="setSelectedComponent('active-goals')">Active Goals</button>
         <button @click="setSelectedComponent('manage-goals')">Manage Goals</button>
 <!--        <active-goals v-if="selectedComponent === 'active-goals'"></active-goals>-->
@@ -15,7 +15,7 @@
 
 
 <script>
-import TheHeader from "@/components/WorkingWithComponents/DynamicComponents/TheHeader";
+import TheHeader from "@/components/Layout/TheHeader";
 import ActiveGoals from "@/components/WorkingWithComponents/DynamicComponents/ActiveGoals";
 import ManageGoals from "@/components/WorkingWithComponents/DynamicComponents/ManageGoals";
 

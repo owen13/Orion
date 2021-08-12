@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <!-- <TheHeader /> -->
-        <the-header></the-header>
+        <the-header>Slots</the-header>
         <badge-list></badge-list>
         <user-info
             :full-name="activeUser.name"
@@ -27,7 +27,7 @@
 
 
 <script>
-import TheHeader from "@/components/WorkingWithComponents/UsingSlots/TheHeader";
+import TheHeader from "@/components/Layout/TheHeader";
 import BadgeList from "@/components/WorkingWithComponents/UsingSlots/BadgeList";
 import UserInfo from "@/components/WorkingWithComponents/UsingSlots/UserInfo";
 

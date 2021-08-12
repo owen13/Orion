@@ -8,7 +8,7 @@ import router from './router'
 // import NewFriend from './components/WorkingWithComponents/FriendDirectory/NewFriend'
 // import FriendContact from './components/WorkingWithComponents/FriendDirectory/FriendContact'
 
-import BaseCard from './components/WorkingWithComponents/UsingSlots/BaseCard'
+import BaseCard from './components/UI/BaseCard'
 
 const app = createApp(App)
 

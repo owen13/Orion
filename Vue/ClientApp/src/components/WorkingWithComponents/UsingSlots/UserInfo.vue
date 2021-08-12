@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import BaseBadge from "@/components/WorkingWithComponents/UsingSlots/BaseBadge";
+import BaseBadge from "@/components/UI/BaseBadge";
 
 export default {
     components: {BaseBadge},
