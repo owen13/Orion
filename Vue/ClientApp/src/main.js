@@ -8,10 +8,14 @@ import router from './router'
 // import NewFriend from './components/WorkingWithComponents/FriendDirectory/NewFriend'
 // import FriendContact from './components/WorkingWithComponents/FriendDirectory/FriendContact'
 
+import BaseCard from './components/WorkingWithComponents/MoreOnComponents/BaseCard.vue'
+
 const app = createApp(App)
 
 // app.component('new-friend', NewFriend);
 // app.component('friend-contact', FriendContact);
+
+app.component('base-card', BaseCard);
 
 app.use(router)
 app.mount('#myApp')
