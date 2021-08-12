@@ -49,6 +49,7 @@ export default {
     
     h3 {
         font-size: 1.25rem;
+        font-weight: bold;
         margin: 0.5rem 0;
     }
     

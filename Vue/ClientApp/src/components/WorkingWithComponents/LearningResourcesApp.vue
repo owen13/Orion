@@ -1,15 +1,14 @@
 <template>
     <the-header title="Remember Me"></the-header>
-    <stored-resources :resources="storedResources"></stored-resources>
+    <the-resources></the-resources>
 </template>
 
 <script>
-import StoredResources from "./LearningResourcesApp/StoredResources";
+import TheResources from "./learning-resources/TheResources";
 
 export default {
     name: "TheLearningResourcesApp",
-    components: {StoredResources},
-    
+    components: { TheResources },
     data() {
         return {
             storedResources: [
