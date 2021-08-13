@@ -16,8 +16,10 @@ import LearningResource from "./LearningResource";
 
 export default {
     name: "StoredResources",
-    components: { LearningResource },
-    props: ['resources']
+    inject: ['resources'],
+    components: {
+        LearningResource
+    },
 }
 </script>
 

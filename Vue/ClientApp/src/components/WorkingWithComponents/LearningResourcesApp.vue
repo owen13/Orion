@@ -8,23 +8,12 @@ import TheResources from "./learning-resources/TheResources";
 
 export default {
     name: "TheLearningResourcesApp",
-    components: { TheResources },
+    components: {
+        TheResources
+    },
     data() {
         return {
-            storedResources: [
-                {
-                    id: 'official-guide',
-                    title: 'Official Guide',
-                    description: 'The official Vue.js documentation.',
-                    link: 'https://vuejs.org'
-                },
-                {
-                    id: 'google',
-                    title: 'Google',
-                    description: 'Learn to google...',
-                    link: 'https://google.org'
-                }
-            ]
+
         }
     }
 }
