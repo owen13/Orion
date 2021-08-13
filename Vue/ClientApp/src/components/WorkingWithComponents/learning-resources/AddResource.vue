@@ -1,20 +1,28 @@
 <template>
+    <base-dialog v-if="inputIsInvalid" title="Invalid Input" @close="confirmError">
+        <template #default>
+            <p>At least one input value is invalid.</p>
+        </template>
+        <template v-slot:actions>
+            <base-button @click="confirmError">OK</base-button>
+        </template>
+    </base-dialog>
     <base-card>
-        <form>
+        <form @submit.prevent="submitData">
             <div class="form-control">
                 <label for="title">Title</label>
-                <input type="text" id="title" name="title">
+                <input type="text" id="title" name="title" ref="titleInput">
             </div>
             <div class="form-control">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" rows="3"></textarea>
+                <textarea id="description" name="description" rows="3" ref="descInput"></textarea>
             </div>
             <div class="form-control">
                 <label for="link">Link</label>
-                <input type="text" id="link" name="link">
+                <input type="text" id="link" name="link" ref="linkInput">
             </div>
             <div>
-                <base-button type="submit">Submit</base-button>
+                <base-button type="submit">Add Resource</base-button>
             </div>
         </form>
     </base-card>
@@ -22,7 +30,38 @@
 
 <script>
 export default {
-    name: "AddResource"
+    name: "AddResource",
+    inject: ['addResource'],
+    data() {
+        return {
+            inputIsInvalid: false
+        }
+    },
+    methods: {
+        submitData() {
+            const enteredTitle = this.$refs.titleInput.value;
+            const enteredDescription = this.$refs.descInput.value;
+            const enteredUrl = this.$refs.linkInput.value;
+            
+            if (enteredTitle.trim() === '' || 
+                enteredDescription.trim() === '' || 
+                enteredUrl.trim() === '') {
+                this.inputIsInvalid = true;
+                return;
+            }
+
+            this.inputIsInvalid = false;
+            
+            this.addResource(enteredTitle, enteredDescription, enteredUrl);
+            
+            this.$refs.titleInput.value = '';
+            this.$refs.descInput.value = '';
+            this.$refs.linkInput.value = '';
+        },
+        confirmError() {
+            this.inputIsInvalid = false;
+        }
+    }
 }
 </script>
 
@@ -51,5 +90,6 @@ export default {
     
     .form-control {
         margin: 1rem 0;
+        border: none;
     }
 </style>

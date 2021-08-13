@@ -18,6 +18,13 @@ export default {
         StoredResources,
         AddResource
     },
+    provide() {
+        return {
+            resources: this.storedResources,
+            addResource: this.addResource,
+            deleteResource: this.removeResource
+        }
+    },
     data() {
         return {
             selectedTab: 'stored-resources',
@@ -31,7 +38,7 @@ export default {
                 {
                     id: 'google',
                     title: 'Google',
-                    description: 'Learn to google...',
+                    description: 'Learn to Google.',
                     link: 'https://google.org'
                 }
             ]
@@ -45,16 +52,26 @@ export default {
             return this.selectedTab === 'add-resource' ? null : 'flat';
         }
     },
-    provide() {
-        return {
-            resources: this.storedResources
-        }
-    },
     methods: {
         setSelectedTab(tab) {
             this.selectedTab = tab;
+        },
+        addResource(title, description, url) {
+            const newResource = {
+                id: new Date().toISOString(),
+                title: title,
+                description: description,
+                link: url
+            };
+            this.storedResources.unshift(newResource);
+            this.selectedTab = 'stored-resources';
+        },
+        removeResource(resId) {
+            const resIndex = this.storedResources.findIndex(res => res.id === resId);
+            this.storedResources.splice(resIndex, 1);
         }
-    }
+    },
+
 }
 </script>
 

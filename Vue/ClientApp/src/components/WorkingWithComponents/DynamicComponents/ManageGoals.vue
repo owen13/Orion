@@ -3,20 +3,25 @@
         <h2>Manage Goals</h2>
         <input type="text" ref="goal">
         <button @click="setGoal">Set Goal</button>
-        
-<!--        <error-alert v-if="inputIsInvalid">-->
-<!--            <h2>Input is invalid!</h2>-->
-<!--            <p>Goal must not be empty</p>-->
-<!--            <button @click="confirmError">OK</button>-->
-<!--        </error-alert>-->
-        
+                
         <!-- Teleport moves the enclosed html wherever you want -->
         <teleport to="#myApp">
-            <error-alert v-if="inputIsInvalid">
-                <h2>Input is invalid!</h2>
-                <p>Goal must not be empty</p>
-                <button @click="confirmError">OK</button>
-            </error-alert>
+            <base-dialog  v-if="inputIsInvalid">
+                <template #header>
+                    <h2>Input is invalid!</h2>
+                </template>
+                <template #default>
+                    <p>Goal must not be empty</p>    
+                </template>
+                <template #actions>
+                    <button @click="confirmError">OK</button>    
+                </template>
+            </base-dialog>
+<!--            <error-alert v-if="inputIsInvalid">-->
+<!--                <h2>Input is invalid!</h2>-->
+<!--                <p>Goal must not be empty</p>-->
+<!--                <button @click="confirmError">OK</button>-->
+<!--            </error-alert>-->
         </teleport>
     </div>
 </template>
@@ -27,7 +32,7 @@ import ErrorAlert from './ErrorAlert'
 export default {
     name: "ManageGoals",
     components: {
-        ErrorAlert 
+        //ErrorAlert 
     },
     data() {
         return {
