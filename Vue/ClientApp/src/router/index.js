@@ -19,6 +19,7 @@ import DynamicComponents from "@/components/WorkingWithComponents/DynamicCompone
 import LearningResourcesApp from "@/components/WorkingWithComponents/LearningResourcesApp.vue"
 
 import UsingForms from "@/components/AdvancedFeatures/UsingForms.vue"
+import HttpRequests from "@/components/AdvancedFeatures/HttpRequests.vue"
 
 const routes = [
     {
@@ -120,7 +121,13 @@ const routes = [
         path: "/AdvancedFeatures/UsingForms",
         name: "UsingForms",
         component: UsingForms
-    }
+    },
+    // Section 12
+    {
+        path: "/AdvancedFeatures/HttpRequests",
+        name: "HttpRequests",
+        component: HttpRequests
+    },
     
 ];
 

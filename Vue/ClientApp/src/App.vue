@@ -26,4 +26,16 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+form {
+    text-align: left;
+}
+.form-control {
+    border: none;
+    text-align: left;
+}
+.form-control input[type='radio'] {
+    margin-right: 5px;
+}
+
 </style>

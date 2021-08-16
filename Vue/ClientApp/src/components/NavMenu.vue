@@ -91,6 +91,9 @@
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'UsingForms' }" class="nav-link text-dark">Forms</router-link>
                                 </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'HttpRequests' }" class="nav-link text-dark">HttpRequests</router-link>
+                                </li>
                             </ul>
                         </li>
                     </ul>
