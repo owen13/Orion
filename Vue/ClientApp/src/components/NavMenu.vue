@@ -19,8 +19,8 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" @click="selectMenu('Template')">Template</a>
-                            <ul class="dropdown-menu" :style="{display: selectedMenu === 'Template' ? 'block' : 'none'}">
+                            <a class="nav-link text-dark dropdown-toggle">Template</a>
+                            <ul class="dropdown-menu">
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'Counter' }" class="nav-link text-dark">Counter</router-link>
                                 </li>
@@ -29,12 +29,11 @@
                                 </li>
                             </ul>
                         </li>
-
-
+                        
                         <!-- Section 1-3 -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" @click="selectMenu('2')">The Basics</a>
-                            <ul class="dropdown-menu" :style="{display: selectedMenu === '2' ? 'block' : 'none'}">
+                            <a class="nav-link text-dark dropdown-toggle">The Basics</a>
+                            <ul class="dropdown-menu">
                                 <li class="nav-link">
                                     <router-link :to="{ name: 'DataBinding' }" class="nav-link text-dark">Data Binding</router-link>
                                 </li>
@@ -59,8 +58,8 @@
                         </li>
                         
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-dark dropdown-toggle" @click="selectMenu('Components')">Components</a>
-                            <ul class="dropdown-menu" :style="{display: selectedMenu === 'Components' ? 'block' : 'none'}">
+                            <a class="nav-link text-dark dropdown-toggle">Components</a>
+                            <ul class="dropdown-menu">
                                 <!-- Section 6 -->
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'FriendDirectory_NeedsChildComponents' }" class="nav-link text-dark">Problem: Child Components Needed</router-link>
@@ -85,6 +84,15 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-dark dropdown-toggle">Advanced</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'UsingForms' }" class="nav-link text-dark">Forms</router-link>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -92,12 +100,57 @@
     </header>
 </template>
 
+<script>
+    import $ from 'jquery'
+
+    export default {
+        name: "NavMenu",
+        data() {
+            return {
+                isExpanded: false,
+                selectedMenu: ''
+            }
+        },
+        methods: {
+            collapse() {
+                this.isExpanded = false;
+            },
+    
+            toggle() {
+                this.isExpanded = !this.isExpanded;
+            },
+        },
+        mounted() {
+            $(":not('.nav-link')").on('click', function(e) {
+                e.stopPropagation();
+                $('.dropdown-menu').hide();
+            });
+            
+            $(".nav-link.dropdown-toggle").on('click', function(e) {
+                e.stopPropagation();
+                
+                let dropdown = $(e.target).next();
+                if (dropdown.css('display') === 'none') {
+                    $('.dropdown-menu').hide();
+                    dropdown.show();
+                } else {
+                    $('.dropdown-menu').hide();
+                    dropdown.hide();
+                }
+            });
+        }
+    }
+</script>
 
 <style>
 a.navbar-brand {
     white-space: normal;
     text-align: center;
     word-break: break-all;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
 }
 
 html {
@@ -114,31 +167,3 @@ html {
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 </style>
-<script>
-export default {
-    name: "NavMenu",
-    data() {
-        return {
-            isExpanded: false,
-            selectedMenu: ''
-        }
-    },
-    methods: {
-        collapse() {
-            this.isExpanded = false;
-        },
-
-        toggle() {
-            this.isExpanded = !this.isExpanded;
-        },
-         
-        selectMenu(menu) {
-            if (this.selectedMenu === menu)
-                this.selectedMenu = '';
-            else
-                this.selectedMenu = menu;
-        }   
-            
-    }
-}
-</script>

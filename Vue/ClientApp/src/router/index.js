@@ -18,6 +18,8 @@ import UsingSlots from "@/components/WorkingWithComponents/UsingSlots.vue"
 import DynamicComponents from "@/components/WorkingWithComponents/DynamicComponents.vue"
 import LearningResourcesApp from "@/components/WorkingWithComponents/LearningResourcesApp.vue"
 
+import UsingForms from "@/components/AdvancedFeatures/UsingForms.vue"
+
 const routes = [
     {
         path: "/",
@@ -111,8 +113,14 @@ const routes = [
         path: "/WorkingWithComponents/LearningResourcesApp",
         name: "LearningResourcesApp",
         component: LearningResourcesApp
-    }
+    },
     
+    // Section 11
+    {
+        path: "/AdvancedFeatures/UsingForms",
+        name: "UsingForms",
+        component: UsingForms
+    }
     
 ];
 
