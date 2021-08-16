@@ -29,6 +29,7 @@
                 <p
                     v-if="invalidInput"
                 >One or more input fields are invalid. Please check your provided data.</p>
+                    <p v-if="error">{{ error }}</p>
                 <div>
                     <base-button type="submit">Submit</base-button>
                 </div>
@@ -38,6 +39,8 @@
 </template>
 
 <script>
+//import axios from 'axios';
+
 export default {
     name: "LearningSurvey",
     data() {
@@ -45,9 +48,9 @@ export default {
             enteredName: '',
             chosenRating: null,
             invalidInput: false,
+            error: null
         };
     },
-    //emits: ['survey-submit'],
     methods: {
         submitSurvey() {
             if (this.enteredName === '' || !this.chosenRating) {
@@ -56,9 +59,20 @@ export default {
             }
             this.invalidInput = false;
 
-            // this.$emit('survey-submit', {
-            //     userName: this.enteredName,
-            //     rating: this.chosenRating,
+            // axios.post('https://udemy-vue-e734c-default-rtdb.europe-west1.firebasedatabase.app/surveys.json', {
+            //     name: this.enteredName,
+            //     rating: this.chosenRating
+            // })
+            // .then((response) => {
+            //     if (response.ok) {
+            //         // ---
+            //     } else {
+            //         throw new Error('Could not save data');
+            //     }
+            // })
+            // .catch((error) => {
+            //     console.log('error', error);
+            //     this.error = "Input error!"
             // });
             
             fetch('https://udemy-vue-e734c-default-rtdb.europe-west1.firebasedatabase.app/surveys.json', {
@@ -66,9 +80,20 @@ export default {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ 
+                body: JSON.stringify({
                     name: this.enteredName, 
                     rating: this.chosenRating })
+            })
+            .then((response) => {
+                if (response.ok) {
+                    // ---
+                } else {
+                    throw new Error('Could not save data');
+                }
+            })
+            .catch((error) => {
+                console.log('error', error);
+                this.error = "Input error!"
             });
 
             this.enteredName = '';
