@@ -48,7 +48,7 @@
                                 </li>
                                 <!-- Section 4 -->
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'MonsterSlayer' }" class="nav-link text-dark"><b>Project: Monster Slayer</b></router-link>
+                                    <router-link :to="{ name: 'MonsterSlayer' }" class="nav-link text-dark"><span class="project">Project: Monster Slayer</span></router-link>
                                 </li>
                                 <!-- Section 5 -->
                                 <li class="nav-item">
@@ -80,7 +80,7 @@
                                     <router-link :to="{ name: 'DynamicComponents' }" class="nav-link text-dark">Dynamic Components, Dialogs, Teleporting</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'LearningResourcesApp' }" class="nav-link text-dark"><b>Project: The Learning Resources App</b></router-link>
+                                    <router-link :to="{ name: 'LearningResourcesApp' }" class="nav-link text-dark project"><span class="project">Project: The Learning Resources App</span></router-link>
                                 </li>
                             </ul>
                         </li>
@@ -93,6 +93,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'HttpRequests' }" class="nav-link text-dark">HttpRequests</router-link>
+                                </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'UsingRouting' }" class="nav-link text-dark">Routing</router-link>
                                 </li>
                             </ul>
                         </li>

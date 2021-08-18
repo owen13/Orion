@@ -1,4 +1,5 @@
 ﻿import { createWebHistory, createRouter } from "vue-router";
+
 import Home from "@/components/Home.vue";
 import Counter from "@/components/Template/Counter.vue";
 import FetchData from "@/components/Template/FetchData.vue";
@@ -20,12 +21,19 @@ import LearningResourcesApp from "@/components/WorkingWithComponents/LearningRes
 
 import UsingForms from "@/components/AdvancedFeatures/UsingForms.vue"
 import HttpRequests from "@/components/AdvancedFeatures/HttpRequests.vue"
+import UsingRouting from "@/components/AdvancedFeatures/UsingRouting.vue"
+import NotFound from "@/components/NotFound.vue"
 
 const routes = [
     {
         path: "/",
+        redirect: "/Home"
+    },
+    {
+        path: "/Home",
         name: "Home",
         component: Home,
+        //alias: "/"
     },
     {
         path: "/Template/Counter",
@@ -128,12 +136,31 @@ const routes = [
         name: "HttpRequests",
         component: HttpRequests
     },
+    // Section 13
+    {
+        path: "/AdvancedFeatures/UsingRouting/:activePage?",
+        name: "UsingRouting",
+        component: UsingRouting
+    },
+    {
+        path: "/AdvancedFeatures/UsingRouting/team-members/:teamId",
+        name: "TeamsList",
+        component: UsingRouting,
+        props: true
+    },
+    {
+        path: "/:notFound(.*)",
+        component: NotFound,
+        //redirect: "/Home"
+    }
     
 ];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    //linkActiveClass: 'active-link', // overrides default active class 
+    //linkExactActiveClass: 'active-link-exact' // overrides default active class
 });
 
 export default router;
