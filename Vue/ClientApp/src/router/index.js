@@ -22,6 +22,15 @@ import LearningResourcesApp from "@/components/WorkingWithComponents/LearningRes
 import UsingForms from "@/components/AdvancedFeatures/UsingForms.vue"
 import HttpRequests from "@/components/AdvancedFeatures/HttpRequests.vue"
 import UsingRouting from "@/components/AdvancedFeatures/UsingRouting.vue"
+
+import NestedRoutes from "@/components/AdvancedFeatures/NestedRoutes.vue"
+
+import TeamsList from "@/components/AdvancedFeatures/nested-routes/teams/TeamsList.vue"
+import UsersList from '@/components/AdvancedFeatures/nested-routes/users/UsersList.vue';
+import TeamMembers from '@/components/AdvancedFeatures/nested-routes/teams/TeamMembers.vue';
+import TeamsFooter from '@/components/AdvancedFeatures/nested-routes/teams/TeamsFooter.vue';
+import UsersFooter from '@/components/AdvancedFeatures/nested-routes/users/UsersFooter.vue';
+
 import NotFound from "@/components/NotFound.vue"
 
 const routes = [
@@ -140,27 +149,89 @@ const routes = [
     {
         path: "/AdvancedFeatures/UsingRouting/:activePage?",
         name: "UsingRouting",
-        component: UsingRouting
+        component: UsingRouting,
+        children: [
+            {
+                path: "team-members/:teamId",
+                component: UsingRouting,
+            },
+        ]
     },
     {
-        path: "/AdvancedFeatures/UsingRouting/team-members/:teamId",
-        name: "TeamsList",
-        component: UsingRouting,
-        props: true
+        path: "/AdvancedFeatures/NestedRoutes",
+        name: "NestedRoutes",
+        component: NestedRoutes,
+        children: [
+            {
+                path: "Teams",
+                name: "TeamsList",
+                components: { default: TeamsList, footer: TeamsFooter },
+                children: [
+                    {
+                        path: ":teamId",
+                        name: "team-members",
+                        component: TeamMembers,
+                        props: true
+                    }
+                ]
+            },
+            {
+                path: "Users",
+                name: "UsersList",
+                meta: { needsAuth: true },
+                components: { default: UsersList, footer: UsersFooter },
+                beforeEnter(to, from, next) {
+                    //console.log('users route beforeEnter');
+                    //console.log(to, from)
+                    next();
+                }
+            }
+        ]
     },
+    
     {
         path: "/:notFound(.*)",
         component: NotFound,
         //redirect: "/Home"
     }
-    
 ];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
-    //linkActiveClass: 'active-link', // overrides default active class 
-    //linkExactActiveClass: 'active-link-exact' // overrides default active class
+    linkActiveClass: 'router-link-active active-link active', // overrides default active class 
+    linkExactActiveClass: 'active-link-exact',
+    scrollBehavior(to, from, savedPosition) {
+        //console.log(to, from, savedPosition);
+        if (savedPosition) {
+            return savedPosition;
+        }
+        return { left: 0, top: 0 };
+    },
 });
+
+router.beforeEach((to, from, next) => {
+    // console.log('GLOBAL BEFORE-EACH')
+    // console.log(to, from)
+    
+    if (to.meta.needsAuth) {
+        console.log('PAGE NEEDS AUTH', to, from)
+        
+        next();
+    } else {
+        next();
+    }
+    
+    next();
+    
+    // next(false);
+    // next('/url')
+    // next({name: 'pathName', params: { param1: '123'}});
+})
+
+router.afterEach((to, from) => {
+    // console.log('GLOBAL AFTER-EACH')
+    // console.log(to, from)
+})
 
 export default router;

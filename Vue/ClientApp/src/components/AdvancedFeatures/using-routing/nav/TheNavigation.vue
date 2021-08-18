@@ -6,7 +6,6 @@
 <!--                    <button @click="setActivePage('teams-list')">Set Teams</button>-->
 <!--                    <button @click="setActivePage('users-list')">Set Users</button>-->
 <!--                </li>-->
-                
                 <li>
                     <router-link :to="{ name: 'UsingRouting', params: {activePage: 'teams-list'} }">Teams List Link</router-link>
                     <router-link :to="{ name: 'UsingRouting', params: {activePage: 'users-list'} }">Users List Link</router-link>

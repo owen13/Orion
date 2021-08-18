@@ -22,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClientApp\src\components\AdvancedFeatures\nested-routes" />
     <Folder Include="ClientApp\src\components\AdvancedFeatures\using-routing" />
+    <Folder Include="ClientApp\src\pages" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

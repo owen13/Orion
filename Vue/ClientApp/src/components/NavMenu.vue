@@ -97,6 +97,9 @@
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'UsingRouting' }" class="nav-link text-dark">Routing</router-link>
                                 </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'NestedRoutes' }" class="nav-link text-dark">Child Routes</router-link>
+                                </li>
                             </ul>
                         </li>
                     </ul>
