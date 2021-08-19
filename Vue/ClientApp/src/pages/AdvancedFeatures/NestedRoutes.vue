@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import TheNavigation from './nested-routes/nav/TheNavigation.vue';
+import TheNavigation from '@/components/AdvancedFeatures/nested-routes/nav/TheNavigation.vue';
 
 export default {
     name: "NestedRoutes",

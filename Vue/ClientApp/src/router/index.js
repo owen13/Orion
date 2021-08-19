@@ -1,29 +1,28 @@
 ﻿import { createWebHistory, createRouter } from "vue-router";
 
-import Home from "@/components/Home.vue";
-import Counter from "@/components/Template/Counter.vue";
-import FetchData from "@/components/Template/FetchData.vue";
+import Home from "@/pages/Template/Home.vue";
+import Counter from "@/pages/Template/Counter.vue";
+import FetchData from "@/pages/Template/FetchData.vue";
 
-import DataBinding from "@/components/TheBasics/DataBinding.vue";
-import Events from "@/components/TheBasics/Events.vue";
-import DynamicStyling from "@/components/TheBasics/DynamicStyling.vue";
-import ConditionalContentAndLists from "@/components/TheBasics/ConditionalContentAndLists.vue";
-import MonsterSlayer from "@/components/TheBasics/MonsterSlayer.vue";
-import BehindTheScenes from "@/components/TheBasics/BehindTheScenes.vue";
+import DataBinding from "@/pages/TheBasics/DataBinding.vue";
+import Events from "@/pages/TheBasics/Events.vue";
+import DynamicStyling from "@/pages/TheBasics/DynamicStyling.vue";
+import ConditionalContentAndLists from "@/pages/TheBasics/ConditionalContentAndLists.vue";
+import MonsterSlayer from "@/pages/TheBasics/MonsterSlayer.vue";
+import BehindTheScenes from "@/pages/TheBasics/BehindTheScenes.vue";
 
-import FriendDirectory_NeedsChildComponents from "@/components/WorkingWithComponents/FriendDirectory_NeedsChildComponents.vue"
-import FriendDirectory_UsingChildComponents from "@/components/WorkingWithComponents/FriendDirectory_UsingChildComponents.vue"
-import KnowledgeBase_ComponentsPassingOnVariables from "@/components/WorkingWithComponents/KnowledgeBase_ComponentsPassingOnVariables.vue"
-import KnowledgeBase_InjectingComponents from "@/components/WorkingWithComponents/KnowledgeBase_InjectingComponents.vue"
-import UsingSlots from "@/components/WorkingWithComponents/UsingSlots.vue"
-import DynamicComponents from "@/components/WorkingWithComponents/DynamicComponents.vue"
-import LearningResourcesApp from "@/components/WorkingWithComponents/LearningResourcesApp.vue"
+import FriendDirectory_NeedsChildComponents from "@/pages/WorkingWithComponents/FriendDirectory_NeedsChildComponents.vue"
+import FriendDirectory_UsingChildComponents from "@/pages/WorkingWithComponents/FriendDirectory_UsingChildComponents.vue"
+import KnowledgeBase_ComponentsPassingOnVariables from "@/pages/WorkingWithComponents/KnowledgeBase_ComponentsPassingOnVariables.vue"
+import KnowledgeBase_InjectingComponents from "@/pages/WorkingWithComponents/KnowledgeBase_InjectingComponents.vue"
+import UsingSlots from "@/pages/WorkingWithComponents/UsingSlots.vue"
+import DynamicComponents from "@/pages/WorkingWithComponents/DynamicComponents.vue"
+import LearningResourcesApp from "@/pages/WorkingWithComponents/LearningResourcesApp.vue"
 
-import UsingForms from "@/components/AdvancedFeatures/UsingForms.vue"
-import HttpRequests from "@/components/AdvancedFeatures/HttpRequests.vue"
-import UsingRouting from "@/components/AdvancedFeatures/UsingRouting.vue"
-
-import NestedRoutes from "@/components/AdvancedFeatures/NestedRoutes.vue"
+import UsingForms from "@/pages/AdvancedFeatures/UsingForms.vue"
+import HttpRequests from "@/pages/AdvancedFeatures/HttpRequests.vue"
+import UsingRouting from "@/pages/AdvancedFeatures/UsingRouting.vue"
+import NestedRoutes from "@/pages/AdvancedFeatures/NestedRoutes.vue"
 
 import TeamsList from "@/components/AdvancedFeatures/nested-routes/teams/TeamsList.vue"
 import UsersList from '@/components/AdvancedFeatures/nested-routes/users/UsersList.vue';
@@ -31,7 +30,7 @@ import TeamMembers from '@/components/AdvancedFeatures/nested-routes/teams/TeamM
 import TeamsFooter from '@/components/AdvancedFeatures/nested-routes/teams/TeamsFooter.vue';
 import UsersFooter from '@/components/AdvancedFeatures/nested-routes/users/UsersFooter.vue';
 
-import NotFound from "@/components/NotFound.vue"
+import NotFound from "@/pages/NotFound.vue"
 
 const routes = [
     {
@@ -221,8 +220,6 @@ router.beforeEach((to, from, next) => {
     } else {
         next();
     }
-    
-    next();
     
     // next(false);
     // next('/url')

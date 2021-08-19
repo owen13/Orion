@@ -9,8 +9,6 @@
             :role="activeUser.role"
         ></user-info>
         
-        <active-goals></active-goals>
-        <manage-goals></manage-goals>
         <CourseGoals>
             <template #default="slotProps">
                 <h2>{{ slotProps.item }}</h2>

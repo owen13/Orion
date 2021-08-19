@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TheForm from './using-forms/TheForm'
+import TheForm from '@/components/AdvancedFeatures/using-forms/TheForm'
 
 export default {
     name: "UsingForms",

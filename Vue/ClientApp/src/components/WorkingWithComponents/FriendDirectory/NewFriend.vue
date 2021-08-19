@@ -38,6 +38,9 @@ export default {
 </script>
 
 <style scoped>
+    form {
+        text-align: center;
+    }
     #app input {
         font: inherit;
         padding: 0.15rem;

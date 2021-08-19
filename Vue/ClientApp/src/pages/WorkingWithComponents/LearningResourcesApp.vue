@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import TheResources from "./learning-resources/TheResources";
+import TheResources from "@/components/WorkingWithComponents/learning-resources/TheResources";
 
 export default {
     name: "TheLearningResourcesApp",

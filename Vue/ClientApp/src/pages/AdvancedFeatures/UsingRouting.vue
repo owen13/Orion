@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import TheNavigation from './using-routing/nav/TheNavigation.vue';
-import TeamsList from './using-routing/teams/TeamsList.vue';
-import UsersList from './using-routing/users/UsersList.vue';
-import TeamMembers from './using-routing/teams/TeamMembers.vue';
+import TheNavigation from '@/components/AdvancedFeatures/using-routing/nav/TheNavigation.vue';
+import TeamsList from '@/components/AdvancedFeatures/using-routing/teams/TeamsList.vue';
+import UsersList from '@/components/AdvancedFeatures/using-routing/users/UsersList.vue';
+import TeamMembers from '@/components/AdvancedFeatures/using-routing/teams/TeamMembers.vue';
 
 export default {
     name: "UsingRouting",

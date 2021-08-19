@@ -82,13 +82,13 @@ export default {
     },
     methods: {
         submitForm() {
-            console.log('Username: ' + this.userName);
-            console.log('User age: ', this.userAge);
-            console.log('How did you hear: ', this.how);
-            console.log('Checkboxes', this.interest);
-            console.log('Radios', this.how);
-            console.log('Confirm', this.confirm);
-            console.log('Rating', this.rating);
+            // console.log('Username: ' + this.userName);
+            // console.log('User age: ', this.userAge);
+            // console.log('How did you hear: ', this.how);
+            // console.log('Checkboxes', this.interest);
+            // console.log('Radios', this.how);
+            // console.log('Confirm', this.confirm);
+            // console.log('Rating', this.rating);
             
             this.userName = '';
             this.userAge = null;

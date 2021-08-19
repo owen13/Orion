@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import LearningSurvey from './http-requests/LearningSurvey.vue';
-import UserExperiences from './http-requests/UserExperiences.vue';
+import LearningSurvey from '@/components/AdvancedFeatures/http-requests/LearningSurvey.vue';
+import UserExperiences from '@/components/AdvancedFeatures/http-requests/UserExperiences.vue';
 
 export default {
     name: "HttpRequests",
