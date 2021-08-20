@@ -30,6 +30,8 @@ import TeamMembers from '@/components/AdvancedFeatures/nested-routes/teams/TeamM
 import TeamsFooter from '@/components/AdvancedFeatures/nested-routes/teams/TeamsFooter.vue';
 import UsersFooter from '@/components/AdvancedFeatures/nested-routes/users/UsersFooter.vue';
 
+import AnimationsAndTransitions from "@/pages/AdvancedFeatures/AnimationsAndTransitions";
+
 import NotFound from "@/pages/NotFound.vue"
 
 const routes = [
@@ -186,6 +188,11 @@ const routes = [
                 }
             }
         ]
+    },
+    {
+        path: "/AdvancedFeatures/AnimationsAndTransitions",
+        name: "AnimationsAndTransitions",
+        component: AnimationsAndTransitions,
     },
     
     {
