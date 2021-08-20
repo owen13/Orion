@@ -1,8 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.css'
 
 import { createApp } from 'vue'
+
 import App from './App.vue'
 import router from './router'
+import store from './store'
 
 import TheHeader from "@/components/Layout/TheHeader";
 import BaseCard from "@/components/UI/BaseCard"
@@ -18,6 +20,7 @@ app.component('base-button', BaseButton);
 app.component('base-dialog', BaseDialog);
 app.component('base-modal', BaseModal);
 
+app.use(store);
 app.use(router)
 
 router.isReady().then(() => {

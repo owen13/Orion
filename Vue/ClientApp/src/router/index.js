@@ -34,6 +34,7 @@ import AnimationsAndTransitions from "@/pages/AdvancedFeatures/AnimationsAndTran
 import AnimatedRoutingPageOne from "@/components/AdvancedFeatures/animated-stuff/AnimatedRoutingPageOne"
 import AnimatedRoutingPageTwo from "@/components/AdvancedFeatures/animated-stuff/AnimatedRoutingPageTwo"
 
+import VuexStateManagement from "@/pages/AdvancedFeatures/VuexStateManagement";
 
 import NotFound from "@/pages/NotFound.vue"
 
@@ -161,6 +162,7 @@ const routes = [
             },
         ]
     },
+    // Section 14
     {
         path: "/AdvancedFeatures/NestedRoutes",
         name: "NestedRoutes",
@@ -209,6 +211,12 @@ const routes = [
                 component: AnimatedRoutingPageTwo
             },
         ]
+    },
+    // Section 15
+    {
+        path: "/AdvancedFeatures/VuexStateManagement/",
+        name: "VuexStateManagement",
+        component: VuexStateManagement
     },
     
     {

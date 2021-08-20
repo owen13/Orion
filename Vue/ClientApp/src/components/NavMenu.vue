@@ -103,6 +103,9 @@
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'AnimatedRoutingPageOne' }" class="nav-link text-dark">Animations & Transitions</router-link>
                                 </li>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'VuexStateManagement' }" class="nav-link text-dark">Vuex</router-link>
+                                </li>
                             </ul>
                         </li>
                     </ul>
