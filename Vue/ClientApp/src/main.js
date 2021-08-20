@@ -19,4 +19,8 @@ app.component('base-dialog', BaseDialog);
 app.component('base-modal', BaseModal);
 
 app.use(router)
-app.mount('#myApp')
+
+router.isReady().then(() => {
+    app.mount('#myApp')    
+});
+

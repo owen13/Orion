@@ -1,11 +1,22 @@
 <template>
+    <div>
+        <router-view v-slot="slotProps">
+            <transition name="fade-button" mode="out-in">
+                <component :is="slotProps.Component"></component>
+            </transition>
+        </router-view>    
+    </div>
+    
     <div class="container">
         <users-list></users-list>
     </div>
+    
+    <h2></h2>
     <div class="container">
         <div class="block" :class="{animate: animatedBlock}"></div>
         <button @click="animateBlock">Animate</button>
     </div>
+    
     <div class="container">
         <button @click="toggleParagraph">Toggle paragraph using transform</button>
         <transition>
@@ -60,7 +71,7 @@
 </template>
 
 <script>
-import UsersList from '@/components/AdvancedFeatures/animated-lists/UsersList'
+import UsersList from '@/components/AdvancedFeatures/animated-stuff/UsersList'
 
 export default {
     name: "AnimationsAndTransitions",

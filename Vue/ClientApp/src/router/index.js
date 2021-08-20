@@ -31,6 +31,9 @@ import TeamsFooter from '@/components/AdvancedFeatures/nested-routes/teams/Teams
 import UsersFooter from '@/components/AdvancedFeatures/nested-routes/users/UsersFooter.vue';
 
 import AnimationsAndTransitions from "@/pages/AdvancedFeatures/AnimationsAndTransitions";
+import AnimatedRoutingPageOne from "@/components/AdvancedFeatures/animated-stuff/AnimatedRoutingPageOne"
+import AnimatedRoutingPageTwo from "@/components/AdvancedFeatures/animated-stuff/AnimatedRoutingPageTwo"
+
 
 import NotFound from "@/pages/NotFound.vue"
 
@@ -190,9 +193,22 @@ const routes = [
         ]
     },
     {
-        path: "/AdvancedFeatures/AnimationsAndTransitions",
+        path: "/AdvancedFeatures/AnimationsAndTransitions/",
         name: "AnimationsAndTransitions",
         component: AnimationsAndTransitions,
+        children: [
+            {
+                path: "",
+                alias: ['/'],
+                name: "AnimatedRoutingPageOne",
+                component: AnimatedRoutingPageOne
+            },
+            {
+                path: "AnimatedRoutingPageTwo",
+                name: "AnimatedRoutingPageTwo",
+                component: AnimatedRoutingPageTwo
+            },
+        ]
     },
     
     {

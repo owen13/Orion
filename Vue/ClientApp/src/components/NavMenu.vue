@@ -101,8 +101,8 @@
                                     <router-link :to="{ name: 'NestedRoutes' }" class="nav-link text-dark">Nested Routes</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'AnimationsAndTransitions' }" class="nav-link text-dark">Animations & Transitions</router-link>
-                                </li>                              
+                                    <router-link :to="{ name: 'AnimatedRoutingPageOne' }" class="nav-link text-dark">Animations & Transitions</router-link>
+                                </li>
                             </ul>
                         </li>
                     </ul>
